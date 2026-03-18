@@ -211,16 +211,16 @@ async function submitExam() {
     if (!currentStudent) return;
 
     // Add all exam data
-    const examData = {
-        name: currentStudent.name,
-        class: currentStudent.class,
-        subject: currentStudent.subject,
-        score: finalScore,
-        total: examQuestions.length,
-        date: new Date().toLocaleString(),
-        answers: studentAnswers,
-        questions: examQuestions
-    };
+   const examData = {
+    student: currentStudent.name, // ✅ FIXED
+    class: currentStudent.class,
+    subject: currentStudent.subject,
+    score: finalScore,
+    total: examQuestions.length,
+    date: new Date().toLocaleString(),
+    answers: studentAnswers,
+    questions: examQuestions
+};
 
     try {
         const res = await fetch("/results", {
