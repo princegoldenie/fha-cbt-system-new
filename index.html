@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>First Harvard Academy CBT 2026</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="script.js" defer></script>
+</head>
+<body>
+<div class="container">
+    <h1>FIRST HARVARD ACADEMY</h1>
+    <h3>Tech Creation Academy 2026 CBT Portal</h3>
+
+    <p>Enter your details to start the exam</p>
+
+    <input id="studentName" placeholder="Enter Student Name">
+
+    <label for="classLevel">Select Class:</label>
+    <select id="classLevel">
+        <option value="Pry1">Pry 1</option>
+        <option value="Pry2">Pry 2</option>
+        <option value="Pry3">Pry 3</option>
+        <option value="Pry4">Pry 4</option>
+        <option value="Pry5">Pry 5</option>
+        <option value="JSS1">JSS 1</option>
+        <option value="JSS2">JSS 2</option>
+        <option value="JSS3">JSS 3</option>
+        <option value="SS1">SS 1</option>
+        <option value="SS2">SS 2</option>
+        <option value="SS3">SS 3</option>
+    </select>
+
+    <label for="subject">Select Subject:</label>
+    <select id="subject">
+        <option value="Mathematics">Mathematics</option>
+        <option value="English">English</option>
+        <option value="Basic Science">Basic Science</option>
+        <option value="PHE">PHE</option>
+        <option value="Digital Tech">Digital Tech</option>
+        <option value="CRS">CRS</option>
+        <option value="Nigerian History">Nigerian History</option>
+        <option value="SCS">SCS</option>
+        <option value="CCA">CCA</option>
+        <option value="Home Economics">Home Economics</option>
+        <option value="Quantitative Reasoning">Quantitative Reasoning</option>
+        <option value="Verbal Reasoning">Verbal Reasoning</option>
+        <option value="Biology">Biology</option>
+        <option value="Physics">Physics</option>
+        <option value="Chemistry">Chemistry</option>
+        <option value="Government">Government</option>
+        <option value="Literature">Literature</option>
+        <option value="Geography">Geography</option>
+        <option value="Commerce">Commerce</option>
+        <option value="Marketing">Marketing</option>
+        <option value="Financial Accounting">Financial Accounting</option>
+    </select>
+
+    <button id="startBtn">Start Exam</button>
+
+    <br><br>
+    <button onclick="window.location.href='admin.html'">Teacher/Admin Dashboard</button>
+</div>
+
+<script>
+document.getElementById("startBtn").addEventListener("click", async () => {
+    const name = document.getElementById("studentName").value.trim();
+    const studentClass = document.getElementById("classLevel").value;
+    const subject = document.getElementById("subject").value;
+
+    if (!name) {
+        alert("Please enter your name!");
+        return;
+    }
+
+    // Prepare student data
+    const studentData = {
+        student: name,
+        class: studentClass,
+        subject: subject,
+        score: 0,   // Will be updated after exam
+        total: 0,   // Will be updated after exam
+        date: new Date().toLocaleString(),
+        answers: [],
+        questions: [] // This will hold questions for review
+    };
+
+    // Save to server temporarily to track start
+    try {
+        const res = await fetch("/results", {
+            method: "POST",
+            headers: {"Content-Type": "application/json"},
+            body: JSON.stringify(studentData)
+        });
+
+        const data = await res.json();
+        if (data.success) {
+            // Store locally so exam script can update answers
+            localStorage.setItem("currentStudent", JSON.stringify(studentData));
+
+            // Redirect to exam page
+            window.location.href = "exam.html";
+        } else {
+            alert("Error starting exam: " + (data.error || "Unknown error"));
+        }
+
+    } catch (err) {
+        console.error(err);
+        alert("Could not connect to server. Make sure the server is running.");
+    }
+});
+</script>
+</body>
+</html>

@@ -1,0 +1,479 @@
+/* =======================================
+   GLOBAL STYLES
+======================================= */
+
+*{
+    box-sizing:border-box;
+    margin:0;
+    padding:0;
+    font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+body{
+    background-color:#f5f1ee;
+    color:#4b2e2e;
+    line-height:1.6;
+    position:relative;
+    overflow-x:hidden;
+}
+
+/* Floating Background Shapes */
+
+body::before,
+body::after{
+    content:"";
+    position:fixed;
+    width:300px;
+    height:300px;
+    background:rgba(139,94,60,0.08);
+    border-radius:50%;
+    z-index:-1;
+    animation:floatMove 12s ease-in-out infinite;
+}
+
+body::before{
+    top:-80px;
+    left:-80px;
+}
+
+body::after{
+    bottom:-80px;
+    right:-80px;
+    animation-delay:6s;
+}
+
+@keyframes floatMove{
+
+    0%{transform:translateY(0px);}
+    50%{transform:translateY(30px);}
+    100%{transform:translateY(0px);}
+
+}
+
+
+/* =======================================
+   MAIN CONTAINERS
+======================================= */
+
+.container,
+.examContainer{
+
+    max-width:1000px;
+    margin:40px auto;
+    padding:25px 30px;
+    background-color:#fff8f0;
+    border-radius:15px;
+    box-shadow:0 10px 25px rgba(0,0,0,0.12);
+
+    animation:fadeIn 1s ease;
+
+}
+
+@keyframes fadeIn{
+
+    from{
+        opacity:0;
+        transform:translateY(20px);
+    }
+
+    to{
+        opacity:1;
+        transform:translateY(0);
+    }
+
+}
+
+
+/* =======================================
+   HEADINGS
+======================================= */
+
+h1{
+    color:#4b2e2e;
+    font-size:2.3em;
+    margin-bottom:10px;
+    text-align:center;
+}
+
+h2,h3{
+    color:#6a3f3f;
+    margin-bottom:15px;
+}
+
+
+/* =======================================
+   INPUTS / SELECTS
+======================================= */
+
+input,
+select{
+
+    width:100%;
+    padding:12px 15px;
+    margin:10px 0 20px 0;
+
+    border:2px solid #d9c6b0;
+    border-radius:8px;
+
+    font-size:1em;
+
+    transition:all 0.3s ease;
+
+}
+
+input:focus,
+select:focus{
+
+    border-color:#8b5e3c;
+    outline:none;
+
+}
+
+
+/* =======================================
+   BUTTONS
+======================================= */
+
+button{
+
+    background-color:#8b5e3c;
+    color:white;
+
+    border:none;
+    padding:12px 25px;
+
+    font-size:1em;
+
+    border-radius:8px;
+    cursor:pointer;
+
+    transition:all 0.3s ease;
+
+    margin-top:10px;
+
+}
+
+button:hover{
+
+    background-color:#a17250;
+
+    transform:translateY(-3px);
+
+    box-shadow:0 6px 12px rgba(0,0,0,0.18);
+
+}
+
+
+/* =======================================
+   EXAM PAGE LAYOUT
+======================================= */
+
+.examContainer{
+
+    display:flex;
+    gap:30px;
+
+}
+
+.leftPanel{
+
+    flex:3;
+
+}
+
+.rightPanel{
+
+    flex:1;
+
+    background-color:#fdf5f0;
+
+    padding:20px;
+
+    border-radius:12px;
+
+    border:1px solid #e2d6cc;
+
+    height:fit-content;
+
+}
+
+
+/* =======================================
+   QUESTION BOX
+======================================= */
+
+#question{
+
+    margin-bottom:20px;
+
+    font-size:1.2em;
+
+    background:white;
+
+    padding:20px;
+
+    border-radius:10px;
+
+    box-shadow:0 6px 15px rgba(0,0,0,0.08);
+
+    animation:floatCard 4s ease-in-out infinite;
+
+}
+
+@keyframes floatCard{
+
+    0%{transform:translateY(0px);}
+    50%{transform:translateY(-5px);}
+    100%{transform:translateY(0px);}
+
+}
+
+
+/* =======================================
+   ANSWER OPTIONS
+======================================= */
+
+#options button{
+
+    display:block;
+
+    width:100%;
+
+    margin-bottom:12px;
+
+    background-color:#d9c6b0;
+
+    color:#4b2e2e;
+
+    border-radius:8px;
+
+    border:none;
+
+    padding:12px;
+
+    font-size:1em;
+
+    cursor:pointer;
+
+    transition:all 0.3s ease;
+
+}
+
+#options button:hover{
+
+    background-color:#bfa185;
+
+    color:white;
+
+}
+
+
+/* =======================================
+   QUESTION NAVIGATOR
+======================================= */
+
+#navigator{
+
+    display:flex;
+
+    flex-wrap:wrap;
+
+    gap:8px;
+
+    margin-top:15px;
+
+}
+
+.navBtn{
+
+    width:35px;
+
+    height:35px;
+
+    border-radius:50%;
+
+    border:1px solid #8b5e3c;
+
+    background-color:#fff3eb;
+
+    cursor:pointer;
+
+    transition:all 0.3s ease;
+
+}
+
+.navBtn:hover{
+
+    background-color:#8b5e3c;
+
+    color:white;
+
+    transform:scale(1.1);
+
+}
+
+
+/* =======================================
+   TIMER
+======================================= */
+
+#timer{
+
+    font-size:1.6em;
+
+    margin-bottom:20px;
+
+    color:#8b5e3c;
+
+    font-weight:bold;
+
+}
+
+
+/* =======================================
+   ADMIN DASHBOARD TABLE
+======================================= */
+
+table{
+
+    width:100%;
+
+    border-collapse:collapse;
+
+    margin-top:20px;
+
+    background-color:#fff8f0;
+
+    border-radius:10px;
+
+    overflow:hidden;
+
+}
+
+table th,
+table td{
+
+    padding:12px 15px;
+
+    border-bottom:1px solid #e2d6cc;
+
+    text-align:left;
+
+}
+
+table th{
+
+    background-color:#8b5e3c;
+
+    color:white;
+
+}
+
+table tr:nth-child(even){
+
+    background-color:#fdf5f0;
+
+}
+
+table tr:hover{
+
+    background-color:#e8d6cd;
+
+}
+
+
+/* =======================================
+   ADMIN FILTERS
+======================================= */
+
+.filters{
+
+    display:flex;
+
+    flex-wrap:wrap;
+
+    gap:15px;
+
+    margin-bottom:15px;
+
+}
+
+.filters select,
+.filters input{
+
+    flex:1;
+
+    padding:10px;
+
+    border-radius:8px;
+
+    border:1px solid #d9c6b0;
+
+}
+
+.filters button{
+
+    padding:10px 15px;
+
+    border-radius:8px;
+
+}
+
+
+/* =======================================
+   RESPONSIVE DESIGN
+======================================= */
+
+@media(max-width:900px){
+
+    .examContainer{
+
+        flex-direction:column;
+
+    }
+
+    .leftPanel,
+    .rightPanel{
+
+        width:100%;
+
+    }
+
+    .filters{
+
+        flex-direction:column;
+
+    }
+
+}
+
+/* =======================================
+   PROGRESS BAR
+======================================= */
+
+.progressContainer{
+
+    width:100%;
+    height:12px;
+
+    background:#e6d6c8;
+
+    border-radius:10px;
+
+    margin-bottom:20px;
+
+    overflow:hidden;
+
+}
+
+.progressBar{
+
+    height:100%;
+
+    width:0%;
+
+    background:#8b5e3c;
+
+    transition:width 0.4s ease;
+
+}

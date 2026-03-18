@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>FHA CBT Exam</title>
+    <link rel="stylesheet" href="style.css">
+    <!-- Load questionBank first, then exam logic -->
+    <script src="questionBank.js" defer></script>
+    <script src="script.js" defer></script>
+</head>
+<body>
+<div class="examContainer">
+    <div class="leftPanel">
+        <h2 id="timer">30:00</h2>
+
+        <div class="progressContainer">
+            <div class="progressBar" id="progressBar"></div>
+        </div>
+
+        <h3 id="question">Question appears here</h3>
+        <div id="options"></div>
+
+        <!-- Control Buttons -->
+        <button id="nextBtn">Next</button>
+        <button id="submitBtn">Submit</button>
+        <button id="addTimeBtn">Add Extra Time</button>
+    </div>
+
+    <div class="rightPanel">
+        <h3>Questions</h3>
+        <div id="navigator"></div>
+    </div>
+</div>
+</body>
+</html>

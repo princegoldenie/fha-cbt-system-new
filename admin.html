@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>FHA Admin Dashboard</title>
+    <link rel="stylesheet" href="style.css">
+
+    <!-- jsPDF and AutoTable for PDF export -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf-autotable/3.5.28/jspdf.plugin.autotable.min.js"></script>
+
+    <script src="admin.js" defer></script>
+</head>
+<body>
+<div class="container">
+    <h1>First Harvard Academy - Admin Dashboard</h1>
+
+    <div class="filters">
+        <label>Select Level:</label>
+        <select id="filterLevel">
+            <option value="">All Levels</option>
+            <option value="Pry">Primary Level</option>
+            <option value="JSS">JSS Level</option>
+            <option value="SSS">SSS Level</option>
+        </select>
+
+        <button onclick="exportCSV()">Export as Excel</button>
+        <button onclick="exportPDF()">Export as PDF</button>
+    </div>
+
+    <table border="1" id="resultsTable">
+        <thead>
+            <tr>
+                <th>Name</th>
+                <th>Class</th>
+                <th>Subject</th>
+                <th>Score</th>
+                <th>Total</th>
+                <th>Date</th>
+            </tr>
+        </thead>
+        <tbody>
+        </tbody>
+    </table>
+</div>
+</body>
+</html>
