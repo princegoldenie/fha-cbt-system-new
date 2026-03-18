@@ -34,8 +34,8 @@ app.get("/results", (req, res) => {
 app.post("/results", (req, res) => {
   const newResult = req.body;
 
-  // Basic validation
-  if (!newResult.name || !newResult.class || !newResult.subject) {
+  // ✅ FIXED validation
+  if (!newResult.student || !newResult.class || !newResult.subject) {
     return res.status(400).json({ error: "Incomplete result data" });
   }
 
