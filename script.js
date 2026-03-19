@@ -20,7 +20,6 @@ function startExam() {
     let classLevel = document.getElementById("classLevel").value;
     let subject = document.getElementById("subject").value;
 
-    // Save student info in localStorage temporarily
     localStorage.setItem("currentStudent", JSON.stringify({
         name,
         class: classLevel,
@@ -47,7 +46,6 @@ if (window.location.pathname.includes("exam.html")) {
         window.location.href = "index.html";
     }
 
-    // Load questions for student
     let classLevel = currentStudent.class;
     let subject = currentStudent.subject;
 
@@ -64,6 +62,9 @@ if (window.location.pathname.includes("exam.html")) {
     createNavigator();
     loadQuestion();
     startTimer();
+
+    // ✅ Connect submit button
+    document.getElementById("submitBtn")?.addEventListener("click", submitExam);
 }
 
 // ================== LOAD QUESTION ==================
@@ -75,8 +76,7 @@ function loadQuestion() {
     }
 
     let q = examQuestions[currentQuestion];
-    document.getElementById("question").innerText =
-        `${currentQuestion + 1}. ${q.question}`;
+    document.getElementById("question").innerText = `${currentQuestion + 1}. ${q.question}`;
 
     let options = shuffle([
         { key: "a", value: q.a },
@@ -200,6 +200,7 @@ window.addEventListener("blur", handleCheating);
 
 // ================== SUBMIT EXAM ==================
 async function submitExam() {
+    console.log("Submitting exam..."); // ✅ Debug log
     score = 0;
     examQuestions.forEach((q, i) => {
         if (studentAnswers[i] === q.correct) score++;
@@ -208,19 +209,18 @@ async function submitExam() {
     let finalScore = extraUsed ? Math.floor(score * 0.95) : score;
 
     const currentStudent = JSON.parse(localStorage.getItem("currentStudent"));
-    if (!currentStudent) return;
+    if (!currentStudent) return alert("Student info missing.");
 
-    // Add all exam data
-   const examData = {
-    student: currentStudent.name, // ✅ FIXED
-    class: currentStudent.class,
-    subject: currentStudent.subject,
-    score: finalScore,
-    total: examQuestions.length,
-    date: new Date().toLocaleString(),
-    answers: studentAnswers,
-    questions: examQuestions
-};
+    const examData = {
+        name: currentStudent.name,
+        class: currentStudent.class,
+        subject: currentStudent.subject,
+        score: finalScore,
+        total: examQuestions.length,
+        date: new Date().toLocaleString(),
+        answers: studentAnswers,
+        questions: examQuestions
+    };
 
     try {
         const res = await fetch("/results", {
