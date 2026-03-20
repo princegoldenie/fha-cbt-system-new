@@ -36,7 +36,7 @@ app.post("/results", (req, res) => {
 
   // ✅ FIXED validation
   if (!newResult.name || !newResult.class || !newResult.subject) {
-    return res.status(400).json({ error: "Incomplete result data" });
+    return res.status(500).json({ error: "Incomplete result data" });
   }
 
   fs.readFile(RESULTS_FILE, "utf8", (err, data) => {
