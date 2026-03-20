@@ -35,7 +35,7 @@ app.post("/results", (req, res) => {
   const newResult = req.body;
 
   // ✅ FIXED validation
-  if (!newResult.student || !newResult.class || !newResult.subject) {
+  if (!newResult.name || !newResult.class || !newResult.subject) {
     return res.status(400).json({ error: "Incomplete result data" });
   }
 
