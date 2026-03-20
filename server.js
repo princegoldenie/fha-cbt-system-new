@@ -1,67 +1,48 @@
-// ==== SERVER SETUP ====
 const express = require("express");
 const fs = require("fs");
 const path = require("path");
-const bodyParser = require("body-parser");
 
 const app = express();
 const PORT = process.env.PORT || 3000;
 
-// JSON file to store results
 const RESULTS_FILE = path.join(__dirname, "results.json");
 
-// Middleware
-app.use(bodyParser.json());
-app.use(express.static(__dirname)); // Serve HTML, CSS, JS files
+app.use(express.json());
+app.use(express.static(__dirname));
 
-// Ensure results file exists
+// Ensure file exists
 if (!fs.existsSync(RESULTS_FILE)) {
-  fs.writeFileSync(RESULTS_FILE, "[]", "utf8");
+    fs.writeFileSync(RESULTS_FILE, "[]");
 }
 
-// ==== ROUTES ====
-
-// Get all results
+// ================= GET =================
 app.get("/results", (req, res) => {
-  fs.readFile(RESULTS_FILE, "utf8", (err, data) => {
-    if (err) return res.status(500).json({ error: "Cannot read results" });
-    const results = JSON.parse(data || "[]");
-    res.json(results);
-  });
+    const data = JSON.parse(fs.readFileSync(RESULTS_FILE));
+    res.json(data);
 });
 
-// Save a new result
+// ================= POST =================
 app.post("/results", (req, res) => {
-  const newResult = req.body;
+    const { student, class: classLevel, subject } = req.body;
 
-  // ✅ FIXED validation
-  if (!newResult.name || !newResult.class || !newResult.subject) {
-    return res.status(500).json({ error: "Incomplete result data" });
-  }
+    console.log("Incoming:", req.body); // debug
 
-  fs.readFile(RESULTS_FILE, "utf8", (err, data) => {
-    if (err) return res.status(500).json({ error: "Cannot read results" });
+    if (!student || !classLevel || !subject) {
+        return res.status(400).json({
+            error: "Incomplete result data",
+            received: req.body
+        });
+    }
 
-    const results = JSON.parse(data || "[]");
-    results.push(newResult);
+    const results = JSON.parse(fs.readFileSync(RESULTS_FILE));
+    results.push(req.body);
 
-    fs.writeFile(
-      RESULTS_FILE,
-      JSON.stringify(results, null, 2),
-      (err) => {
-        if (err) return res.status(500).json({ error: "Cannot save result" });
-        res.json({ success: true, message: "Result saved!" });
-      }
-    );
-  });
+    fs.writeFileSync(RESULTS_FILE, JSON.stringify(results, null, 2));
+
+    res.json({ success: true });
 });
 
-// Serve the home page
-app.get("/", (req, res) => {
-  res.sendFile(path.join(__dirname, "index.html"));
-});
-
-// Start server
+// ================= START =================
 app.listen(PORT, () => {
-  console.log(`CBT system running at http://localhost:${PORT}`);
+    console.log("Server running on port", PORT);
 });
