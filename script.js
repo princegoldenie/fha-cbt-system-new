@@ -193,8 +193,6 @@ async function submitExam() {
 
         localStorage.clear();
 
-    } catch (err) {
-        console.error(err);
-        alert("Submission failed: " + err.message);
+    
     }
 }
