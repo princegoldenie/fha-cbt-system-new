@@ -1,22 +1,18 @@
-let cheatAttempts = 0;
-const maxCheatAttempts = 3;
-
+// ================= GLOBAL VARIABLES =================
 let examQuestions = [];
 let currentQuestion = 0;
-let score = 0;
-let time = 1800;
-let extraUsed = false;
-
 let studentAnswers = [];
+let time = 1800; // 30 minutes
+let timerInterval = null;
 
-// ================== START EXAM ==================
+// ================= START EXAM =================
 function startExam() {
     const name = document.getElementById("studentName").value.trim();
     const classLevel = document.getElementById("classLevel").value;
     const subject = document.getElementById("subject").value;
 
     if (!name || !classLevel || !subject) {
-        alert("Fill all fields!");
+        alert("Please fill all fields");
         return;
     }
 
@@ -26,36 +22,49 @@ function startExam() {
         subject: subject
     };
 
-    console.log("Saving:", studentData); // ✅ DEBUG
+    console.log("Saving student:", studentData);
 
     localStorage.setItem("currentStudent", JSON.stringify(studentData));
 
     window.location.href = "exam.html";
 }
 
-// ================== SHUFFLE ==================
-function shuffle(arr) {
-    return arr.sort(() => Math.random() - 0.5);
+// ================= SAFE GET STUDENT =================
+function getCurrentStudent() {
+    try {
+        const data = JSON.parse(localStorage.getItem("currentStudent"));
+        return data;
+    } catch (e) {
+        return null;
+    }
 }
 
-// ================== EXAM INIT ==================
+// ================= SHUFFLE =================
+function shuffle(array) {
+    return array.sort(() => Math.random() - 0.5);
+}
+
+// ================= INIT EXAM =================
 if (window.location.pathname.includes("exam.html")) {
     initExam();
 }
 
 function initExam() {
-    const currentStudent = JSON.parse(localStorage.getItem("currentStudent"));
+    const student = getCurrentStudent();
 
-    if (!currentStudent) {
-        alert("No student info");
-        return window.location.href = "index.html";
+    if (!student) {
+        alert("Session expired. Start again.");
+        window.location.href = "index.html";
+        return;
     }
 
-    const { class: classLevel, subject } = currentStudent;
+    console.log("Loaded student:", student);
+
+    const classLevel = student.class;
+    const subject = student.subject;
 
     if (!questionBank[classLevel] || !questionBank[classLevel][subject]) {
-        alert("No questions available");
-        examQuestions = [];
+        alert("No questions available for this selection.");
         return;
     }
 
@@ -66,10 +75,14 @@ function initExam() {
     loadQuestion();
     startTimer();
 
-    document.getElementById("submitBtn")?.addEventListener("click", submitExam);
+    // attach submit button safely
+    const submitBtn = document.getElementById("submitBtn");
+    if (submitBtn) {
+        submitBtn.addEventListener("click", submitExam);
+    }
 }
 
-// ================== LOAD QUESTION ==================
+// ================= LOAD QUESTION =================
 function loadQuestion() {
     if (!examQuestions.length) return;
 
@@ -109,7 +122,7 @@ function loadQuestion() {
     updateProgressBar();
 }
 
-// ================== NAVIGATION ==================
+// ================= NAVIGATION =================
 function createNavigator() {
     let html = "";
     for (let i = 0; i < examQuestions.length; i++) {
@@ -118,13 +131,15 @@ function createNavigator() {
     document.getElementById("navigator").innerHTML = html;
 }
 
-function goToQuestion(i) {
-    currentQuestion = i;
+function goToQuestion(index) {
+    currentQuestion = index;
     loadQuestion();
 }
 
 function updateNavigator() {
-    document.querySelectorAll("#navigator button").forEach((btn, i) => {
+    const buttons = document.querySelectorAll("#navigator button");
+
+    buttons.forEach((btn, i) => {
         if (studentAnswers[i]) {
             btn.style.background = "green";
             btn.style.color = "#fff";
@@ -135,40 +150,98 @@ function updateNavigator() {
     });
 }
 
-// ================== PROGRESS ==================
+// ================= NEXT BUTTON =================
+const nextBtn = document.getElementById("nextBtn");
+if (nextBtn) {
+    nextBtn.addEventListener("click", () => {
+        if (currentQuestion < examQuestions.length - 1) {
+            currentQuestion++;
+            loadQuestion();
+        }
+    });
+}
+
+// ================= PROGRESS =================
 function updateProgressBar() {
     const percent = ((currentQuestion + 1) / examQuestions.length) * 100;
     document.getElementById("progressBar").style.width = percent + "%";
 }
 
-// ================== TIMER ==================
+// ================= TIMER =================
 function startTimer() {
-    const interval = setInterval(() => {
+    timerInterval = setInterval(() => {
         time--;
 
-        const m = Math.floor(time / 60);
-        const s = time % 60;
+        const minutes = Math.floor(time / 60);
+        const seconds = time % 60;
 
         document.getElementById("timer").innerText =
-            `${m}:${s < 10 ? "0" : ""}${s}`;
+            `${minutes}:${seconds < 10 ? "0" : ""}${seconds}`;
 
         if (time <= 0) {
-            clearInterval(interval);
+            clearInterval(timerInterval);
             submitExam();
         }
     }, 1000);
 }
 
-console.log("Student Data:", currentStudent);
+// ================= SUBMIT EXAM =================
+async function submitExam() {
+    console.log("Submitting exam...");
 
-const examData = {
-    student: currentStudent?.name,
-    class: currentStudent?.class,
-    subject: currentStudent?.subject,
-    score: finalScore,
-    total: examQuestions.length,
-    date: new Date().toISOString(),
-    answers: studentAnswers
-};
+    const student = getCurrentStudent();
 
-console.log("Sending Data:", examData);
+    if (!student || !student.name || !student.class || !student.subject) {
+        alert("Student data missing. Restart exam.");
+        return;
+    }
+
+    // calculate score
+    let score = 0;
+    examQuestions.forEach((q, i) => {
+        if (studentAnswers[i] === q.correct) score++;
+    });
+
+    const examData = {
+        student: student.name, // ✅ MUST MATCH SERVER
+        class: student.class,
+        subject: student.subject,
+        score: score,
+        total: examQuestions.length,
+        date: new Date().toISOString(),
+        answers: studentAnswers
+    };
+
+    console.log("Sending to server:", examData);
+
+    try {
+        const res = await fetch("/results", {
+            method: "POST",
+            headers: {
+                "Content-Type": "application/json"
+            },
+            body: JSON.stringify(examData)
+        });
+
+        const data = await res.json();
+
+        if (!res.ok) {
+            throw new Error(data.error || "Submission failed");
+        }
+
+        console.log("Server response:", data);
+
+        clearInterval(timerInterval);
+        localStorage.removeItem("currentStudent");
+
+        document.body.innerHTML = `
+            <h1>✅ Exam Completed</h1>
+            <h2>Score: ${score} / ${examQuestions.length}</h2>
+            <a href="index.html">Go Home</a>
+        `;
+
+    } catch (err) {
+        console.error("Submit error:", err);
+        alert("❌ Submission failed: " + err.message);
+    }
+}
