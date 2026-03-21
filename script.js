@@ -25,6 +25,28 @@ function startExam() {
     console.log("Saving student:", studentData);
 
     localStorage.setItem("currentStudent", JSON.stringify(studentData));
+    function startExam() {
+    let name = document.getElementById("studentName").value.trim();
+    if (!name) {
+        alert("Please enter your name");
+        return;
+    }
+
+    let classLevel = document.getElementById("classLevel").value;
+    let subject = document.getElementById("subject").value;
+
+    const studentData = {
+        name,
+        class: classLevel,
+        subject
+    };
+
+    // ✅ Save in TWO places (main + backup)
+    localStorage.setItem("currentStudent", JSON.stringify(studentData));
+    sessionStorage.setItem("currentStudentBackup", JSON.stringify(studentData));
+
+    window.location.href = "exam.html";
+}
 
     window.location.href = "exam.html";
 }
