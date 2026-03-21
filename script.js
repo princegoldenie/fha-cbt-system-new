@@ -154,7 +154,7 @@ function startTimer() {
 
 // ================== SUBMIT ==================
 async function submitExam() {
-    console.log("Submitting...");
+    console.log("Sending:", examData);
 
     const currentStudent = JSON.parse(localStorage.getItem("currentStudent"));
     if (!currentStudent) return alert("Missing student info");
@@ -166,7 +166,7 @@ async function submitExam() {
     const finalScore = extraUsed ? Math.floor(score * 0.95) : score;
 
     const examData = {
-        student: currentStudent.name,   // ✅ IMPORTANT
+        student: currentStudent.name,
         class: currentStudent.class,
         subject: currentStudent.subject,
         score: finalScore,
