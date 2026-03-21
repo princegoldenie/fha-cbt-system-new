@@ -213,10 +213,19 @@ async function submitExam() {
 
     const student = getCurrentStudent();
 
-    if (!student || !student.name || !student.class || !student.subject) {
-        alert("Student data missing. Restart exam.");
-        return;
-    }
+    // 🔁 Try backup if missing
+if (!currentStudent) {
+    currentStudent = JSON.parse(sessionStorage.getItem("currentStudentBackup"));
+}
+
+// ❌ Still missing
+if (!currentStudent) {
+    alert("Student data missing. Restart exam.");
+    window.location.href = "index.html";
+}
+
+// ✅ Restore back into localStorage if recovered
+localStorage.setItem("currentStudent", JSON.stringify(currentStudent));
 
     // calculate score
     let score = 0;
