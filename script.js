@@ -15,13 +15,20 @@ function startExam() {
     const classLevel = document.getElementById("classLevel").value;
     const subject = document.getElementById("subject").value;
 
-    if (!name) return alert("Enter your name");
+    if (!name || !classLevel || !subject) {
+        alert("Fill all fields!");
+        return;
+    }
 
-    localStorage.setItem("currentStudent", JSON.stringify({
-        name,
+    const studentData = {
+        name: name,
         class: classLevel,
-        subject
-    }));
+        subject: subject
+    };
+
+    console.log("Saving:", studentData); // ✅ DEBUG
+
+    localStorage.setItem("currentStudent", JSON.stringify(studentData));
 
     window.location.href = "exam.html";
 }
@@ -152,47 +159,16 @@ function startTimer() {
     }, 1000);
 }
 
-// ================== SUBMIT ==================
-async function submitExam() {
-    console.log("Sending:", examData);
+console.log("Student Data:", currentStudent);
 
-    const currentStudent = JSON.parse(localStorage.getItem("currentStudent"));
-    if (!currentStudent) return alert("Missing student info");
+const examData = {
+    student: currentStudent?.name,
+    class: currentStudent?.class,
+    subject: currentStudent?.subject,
+    score: finalScore,
+    total: examQuestions.length,
+    date: new Date().toISOString(),
+    answers: studentAnswers
+};
 
-    score = examQuestions.reduce((acc, q, i) => {
-        return acc + (studentAnswers[i] === q.correct ? 1 : 0);
-    }, 0);
-
-    const finalScore = extraUsed ? Math.floor(score * 0.95) : score;
-
-    const examData = {
-        student: currentStudent.name,
-        class: currentStudent.class,
-        subject: currentStudent.subject,
-        score: finalScore,
-        total: examQuestions.length,
-        date: new Date().toISOString(),
-        answers: studentAnswers
-    };
-
-    try {
-        const res = await fetch("/results", {
-            method: "POST",
-            headers: { "Content-Type": "application/json" },
-            body: JSON.stringify(examData)
-        });
-
-        const data = await res.json();
-
-        if (!res.ok) throw new Error(data.error || "Failed");
-
-        document.body.innerHTML = `
-            <h1>Exam Completed</h1>
-            <h2>${finalScore} / ${examQuestions.length}</h2>
-        `;
-
-        localStorage.clear();
-
-    
-    }
-}
+console.log("Sending Data:", examData);

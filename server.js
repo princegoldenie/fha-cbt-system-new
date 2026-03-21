@@ -23,16 +23,14 @@ app.get("/results", (req, res) => {
 
 // ================= POST =================
 app.post("/results", (req, res) => {
-    const { student, class: classLevel, subject } = req.body;
+    const student = req.body.student || req.body.name;
+const classLevel = req.body.class;
+const subject = req.body.subject;
 
-    console.log("Incoming:", req.body); // debug
-
-    if (!student || !classLevel || !subject) {
-        return res.status(400).json({
-            error: "Incomplete result data",
-            received: req.body
-        });
-    }
+if (!student || !classLevel || !subject) {
+    console.log("❌ BAD DATA:", req.body);
+    return res.status(400).json({ error: "Incomplete result data" });
+}
 
     const results = JSON.parse(fs.readFileSync(RESULTS_FILE));
     results.push(req.body);
