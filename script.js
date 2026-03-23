@@ -1,4 +1,4 @@
-// ================= GLOBAL VARIABLES =================
+// ================= GLOBAL =================
 let examQuestions = [];
 let currentQuestion = 0;
 let studentAnswers = [];
@@ -16,20 +16,16 @@ function startExam() {
         return;
     }
 
-    const studentData = {
-        name,
-        class: classLevel,
-        subject
-    };
+    const studentData = { name, class: classLevel, subject };
 
-    // Save properly
+    console.log("Saving student:", studentData);
+
     localStorage.setItem("currentStudent", JSON.stringify(studentData));
-
     window.location.href = "exam.html";
 }
 
 // ================= GET STUDENT =================
-function getCurrentStudent() {
+function getStudent() {
     try {
         return JSON.parse(localStorage.getItem("currentStudent"));
     } catch {
@@ -38,33 +34,36 @@ function getCurrentStudent() {
 }
 
 // ================= SHUFFLE =================
-function shuffle(array) {
-    return array.sort(() => Math.random() - 0.5);
+function shuffle(arr) {
+    return arr.sort(() => Math.random() - 0.5);
 }
 
-// ================= INIT EXAM =================
+// ================= INIT =================
 if (window.location.pathname.includes("exam.html")) {
     initExam();
 }
 
 function initExam() {
-    const student = getCurrentStudent();
+    const student = getStudent();
 
     if (!student) {
-        alert("Session expired. Start again.");
+        alert("Session expired. Restart exam.");
         window.location.href = "index.html";
         return;
     }
 
-    const classLevel = student.class;
-    const subject = student.subject;
+    console.log("Loaded student:", student);
 
-    if (!questionBank[classLevel] || !questionBank[classLevel][subject]) {
+    if (!questionBank[student.class] || !questionBank[student.class][student.subject]) {
         alert("No questions available.");
         return;
     }
 
-    examQuestions = shuffle([...questionBank[classLevel][subject]]).slice(0, 50);
+    examQuestions = shuffle([...questionBank[student.class][student.subject]]).slice(0, 50);
+
+    // 🔥 SAVE QUESTIONS (CRITICAL FIX)
+    localStorage.setItem("examQuestions", JSON.stringify(examQuestions));
+
     studentAnswers = new Array(examQuestions.length).fill(null);
 
     createNavigator();
@@ -76,6 +75,8 @@ function initExam() {
 
 // ================= LOAD QUESTION =================
 function loadQuestion() {
+    if (!examQuestions.length) return;
+
     const q = examQuestions[currentQuestion];
 
     document.getElementById("question").innerText =
@@ -109,10 +110,10 @@ function loadQuestion() {
     });
 
     updateNavigator();
-    updateProgressBar();
+    updateProgress();
 }
 
-// ================= NAVIGATION =================
+// ================= NAV =================
 function createNavigator() {
     let html = "";
     for (let i = 0; i < examQuestions.length; i++) {
@@ -121,15 +122,15 @@ function createNavigator() {
     document.getElementById("navigator").innerHTML = html;
 }
 
-function goToQuestion(index) {
-    currentQuestion = index;
+function goToQuestion(i) {
+    currentQuestion = i;
     loadQuestion();
 }
 
 function updateNavigator() {
-    const buttons = document.querySelectorAll("#navigator button");
+    const btns = document.querySelectorAll("#navigator button");
 
-    buttons.forEach((btn, i) => {
+    btns.forEach((btn, i) => {
         if (studentAnswers[i]) {
             btn.style.background = "green";
             btn.style.color = "#fff";
@@ -149,7 +150,7 @@ document.getElementById("nextBtn")?.addEventListener("click", () => {
 });
 
 // ================= PROGRESS =================
-function updateProgressBar() {
+function updateProgress() {
     const percent = ((currentQuestion + 1) / examQuestions.length) * 100;
     document.getElementById("progressBar").style.width = percent + "%";
 }
@@ -159,11 +160,11 @@ function startTimer() {
     timerInterval = setInterval(() => {
         time--;
 
-        const minutes = Math.floor(time / 60);
-        const seconds = time % 60;
+        const min = Math.floor(time / 60);
+        const sec = time % 60;
 
         document.getElementById("timer").innerText =
-            `${minutes}:${seconds < 10 ? "0" : ""}${seconds}`;
+            `${min}:${sec < 10 ? "0" : ""}${sec}`;
 
         if (time <= 0) {
             clearInterval(timerInterval);
@@ -176,12 +177,15 @@ function startTimer() {
 async function submitExam() {
     console.log("Submitting exam...");
 
-    const student = JSON.parse(localStorage.getItem("currentStudent"));
+    const student = getStudent();
 
-    console.log("Loaded student:", student); // 🔥 DEBUG
+    // 🔥 RECOVER QUESTIONS (CRITICAL FIX)
+    if (!examQuestions.length) {
+        examQuestions = JSON.parse(localStorage.getItem("examQuestions")) || [];
+    }
 
-    if (!student || !student.name || !student.class || !student.subject) {
-        alert("Student data missing. Restart exam.");
+    if (!student || !examQuestions.length) {
+        alert("Data missing. Restart exam.");
         window.location.href = "index.html";
         return;
     }
@@ -192,45 +196,40 @@ async function submitExam() {
     });
 
     const examData = {
-        student: student.name,   // ✅ MUST match backend
+        student: student.name,
         class: student.class,
         subject: student.subject,
         score: score,
         total: examQuestions.length,
         date: new Date().toISOString(),
-        answers: studentAnswers
+        answers: studentAnswers,
+        questions: examQuestions
     };
 
-    console.log("📤 Sending:", examData); // 🔥 VERY IMPORTANT
+    console.log("Sending:", examData);
 
     try {
         const res = await fetch("/results", {
             method: "POST",
-            headers: {
-                "Content-Type": "application/json"
-            },
+            headers: { "Content-Type": "application/json" },
             body: JSON.stringify(examData)
         });
 
         const data = await res.json();
 
-        console.log("📥 Server response:", data);
-
-        if (!res.ok) {
-            throw new Error(data.error || "Submission failed");
-        }
+        if (!res.ok) throw new Error(data.error);
 
         clearInterval(timerInterval);
         localStorage.removeItem("currentStudent");
+        localStorage.removeItem("examQuestions");
 
         document.body.innerHTML = `
             <h1>✅ Exam Completed</h1>
             <h2>Score: ${score} / ${examQuestions.length}</h2>
             <a href="index.html">Go Home</a>
         `;
-
     } catch (err) {
-        console.error("❌ Error:", err);
+        console.error(err);
         alert("Submission failed: " + err.message);
     }
 }
