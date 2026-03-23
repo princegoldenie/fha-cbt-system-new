@@ -176,9 +176,11 @@ function startTimer() {
 async function submitExam() {
     console.log("Submitting exam...");
 
-    const student = getCurrentStudent();
+    const student = JSON.parse(localStorage.getItem("currentStudent"));
 
-    if (!student) {
+    console.log("Loaded student:", student); // 🔥 DEBUG
+
+    if (!student || !student.name || !student.class || !student.subject) {
         alert("Student data missing. Restart exam.");
         window.location.href = "index.html";
         return;
@@ -190,7 +192,7 @@ async function submitExam() {
     });
 
     const examData = {
-        student: student.name, // IMPORTANT
+        student: student.name,   // ✅ MUST match backend
         class: student.class,
         subject: student.subject,
         score: score,
@@ -198,6 +200,8 @@ async function submitExam() {
         date: new Date().toISOString(),
         answers: studentAnswers
     };
+
+    console.log("📤 Sending:", examData); // 🔥 VERY IMPORTANT
 
     try {
         const res = await fetch("/results", {
@@ -209,6 +213,8 @@ async function submitExam() {
         });
 
         const data = await res.json();
+
+        console.log("📥 Server response:", data);
 
         if (!res.ok) {
             throw new Error(data.error || "Submission failed");
@@ -224,7 +230,7 @@ async function submitExam() {
         `;
 
     } catch (err) {
-        console.error(err);
-        alert("❌ Submission failed: " + err.message);
+        console.error("❌ Error:", err);
+        alert("Submission failed: " + err.message);
     }
 }
