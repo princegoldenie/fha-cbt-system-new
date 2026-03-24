@@ -16,11 +16,10 @@ function startExam() {
         return;
     }
 
-    const studentData = { name, class: classLevel, subject };
+    const student = { name, class: classLevel, subject };
 
-    console.log("Saving student:", studentData);
+    localStorage.setItem("currentStudent", JSON.stringify(student));
 
-    localStorage.setItem("currentStudent", JSON.stringify(studentData));
     window.location.href = "exam.html";
 }
 
@@ -47,22 +46,34 @@ function initExam() {
     const student = getStudent();
 
     if (!student) {
-        alert("Session expired. Restart exam.");
+        alert("Student data missing. Restart exam.");
         window.location.href = "index.html";
         return;
     }
 
-    console.log("Loaded student:", student);
-
-    if (!questionBank[student.class] || !questionBank[student.class][student.subject]) {
-        alert("No questions available.");
+    // 🚨 CRITICAL FIX
+    if (typeof questionBank === "undefined") {
+        alert("Question bank not loaded!");
         return;
     }
 
-    examQuestions = shuffle([...questionBank[student.class][student.subject]]).slice(0, 50);
+    if (
+        !questionBank[student.class] ||
+        !questionBank[student.class][student.subject]
+    ) {
+        alert("No questions available!");
+        return;
+    }
 
-    // 🔥 SAVE QUESTIONS (CRITICAL FIX)
-    localStorage.setItem("examQuestions", JSON.stringify(examQuestions));
+    examQuestions = shuffle(
+        [...questionBank[student.class][student.subject]]
+    ).slice(0, 50);
+
+    // 🚨 SAFETY CHECK
+    if (examQuestions.length === 0) {
+        alert("❌ Questions failed to load.");
+        return;
+    }
 
     studentAnswers = new Array(examQuestions.length).fill(null);
 
@@ -75,8 +86,6 @@ function initExam() {
 
 // ================= LOAD QUESTION =================
 function loadQuestion() {
-    if (!examQuestions.length) return;
-
     const q = examQuestions[currentQuestion];
 
     document.getElementById("question").innerText =
@@ -110,10 +119,10 @@ function loadQuestion() {
     });
 
     updateNavigator();
-    updateProgress();
+    updateProgressBar();
 }
 
-// ================= NAV =================
+// ================= NAVIGATION =================
 function createNavigator() {
     let html = "";
     for (let i = 0; i < examQuestions.length; i++) {
@@ -128,9 +137,9 @@ function goToQuestion(i) {
 }
 
 function updateNavigator() {
-    const btns = document.querySelectorAll("#navigator button");
+    const buttons = document.querySelectorAll("#navigator button");
 
-    btns.forEach((btn, i) => {
+    buttons.forEach((btn, i) => {
         if (studentAnswers[i]) {
             btn.style.background = "green";
             btn.style.color = "#fff";
@@ -149,22 +158,16 @@ document.getElementById("nextBtn")?.addEventListener("click", () => {
     }
 });
 
-// ================= PROGRESS =================
-function updateProgress() {
-    const percent = ((currentQuestion + 1) / examQuestions.length) * 100;
-    document.getElementById("progressBar").style.width = percent + "%";
-}
-
 // ================= TIMER =================
 function startTimer() {
     timerInterval = setInterval(() => {
         time--;
 
-        const min = Math.floor(time / 60);
-        const sec = time % 60;
+        const m = Math.floor(time / 60);
+        const s = time % 60;
 
         document.getElementById("timer").innerText =
-            `${min}:${sec < 10 ? "0" : ""}${sec}`;
+            `${m}:${s < 10 ? "0" : ""}${s}`;
 
         if (time <= 0) {
             clearInterval(timerInterval);
@@ -179,24 +182,25 @@ async function submitExam() {
 
     const student = getStudent();
 
-    // 🔥 RECOVER QUESTIONS (CRITICAL FIX)
-    if (!examQuestions.length) {
-        examQuestions = JSON.parse(localStorage.getItem("examQuestions")) || [];
+    if (!student) {
+        alert("Student data missing.");
+        return;
     }
 
-    if (!student || !examQuestions.length) {
-        alert("Data missing. Restart exam.");
-        window.location.href = "index.html";
+    // 🚨 BLOCK EMPTY SUBMISSION
+    if (examQuestions.length === 0) {
+        alert("❌ No questions loaded. Cannot submit.");
         return;
     }
 
     let score = 0;
+
     examQuestions.forEach((q, i) => {
         if (studentAnswers[i] === q.correct) score++;
     });
 
     const examData = {
-        student: student.name,
+        name: student.name,
         class: student.class,
         subject: student.subject,
         score: score,
@@ -217,19 +221,21 @@ async function submitExam() {
 
         const data = await res.json();
 
-        if (!res.ok) throw new Error(data.error);
+        if (!res.ok) {
+            throw new Error(data.error || "Submission failed");
+        }
 
         clearInterval(timerInterval);
+
         localStorage.removeItem("currentStudent");
-        localStorage.removeItem("examQuestions");
 
         document.body.innerHTML = `
             <h1>✅ Exam Completed</h1>
             <h2>Score: ${score} / ${examQuestions.length}</h2>
-            <a href="index.html">Go Home</a>
         `;
+
     } catch (err) {
         console.error(err);
-        alert("Submission failed: " + err.message);
+        alert("❌ Submission failed: " + err.message);
     }
 }
