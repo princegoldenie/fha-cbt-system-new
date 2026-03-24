@@ -5,6 +5,26 @@ const questionBank = {
             {question:"2 + 2 = ?", a:"3", b:"4", c:"5", d:"6", correct:"b"},
             {question:"5 x 6 = ?", a:"30", b:"25", c:"40", d:"20", correct:"a"}
         ],
+        'English': [],
+        'Basic Science': [],
+        'PHE': [],
+        'Digital Tech': [],
+        'CRS': [],
+        'Nigerian History': [],
+        'SCS': [],
+        'CCA': [],
+        'Home Economics': [],
+        'Quantitative Reasoning': [],
+        'Verbal Reasoning': []
+    },
+    'Pry2': {},
+    'Pry3': {},
+    'Pry4': {},
+    'Pry5': {},
+
+    // JUNIOR SECONDARY
+    'JSS1': {
+        'Mathematics': [],
         'English': [{question:"The word that rhymes with 'cat' is _____.", a:"Cot", b:"Cut", c:"Bat", d:"Kit", correct:"c"},
 {question:"A group of words that has a subject and a verb and makes complete sense is called a _____.", a:"Phrase", b:"Clause", c:"Sentence", d:"Paragraph", correct:"b"},
 {question:"The past tense of 'teach' is _____.", a:"Teached", b:"Taught", c:"Teachd", d:"Thought", correct:"b"},
@@ -45,28 +65,6 @@ const questionBank = {
 {question:"'She sings beautifully.' The word 'beautifully' tells us _____.", a:"Where", b:"When", c:"How", d:"Why", correct:"c"},
 {question:"The tense used to express an action that has already happened is _____.", a:"Present", b:"Future", c:"Past", d:"Continuous", correct:"c"},
 {question:"Which punctuation mark is used to ask a question?", a:"Full stop", b:"Comma", c:"Question mark", d:"Exclamation mark", correct:"c"}],
-        'Basic Science': [],
-        'PHE': [],
-        'Digital Tech': [],
-        'CRS': [],
-        'Nigerian History': [],
-        'SCS': [],
-        'CCA': [],
-        'Home Economics': [],
-        'Quantitative Reasoning': [],
-        'Verbal Reasoning': []
-    },
-    'Pry2': {},
-    'Pry3': {},
-    'Pry4': {},
-    'Pry5': {},
-
-    // JUNIOR SECONDARY
-    'JSS1': {
-        'Mathematics': [],
-        'English': [
-            {question:"Who wrote 'Things Fall Apart'?", a:"Achebe", b:"Shakespeare", c:"Soyinka", d:"Dickens", correct:"a"}
-        ],
         'Basic Science': [],
         'PHE': [],
         'Digital Tech': [],
