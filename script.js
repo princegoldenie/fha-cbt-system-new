@@ -2,7 +2,7 @@
 let examQuestions = [];
 let currentQuestion = 0;
 let studentAnswers = [];
-let time = 2400; // 45 mins
+let time = 2400; // 40 mins
 let timerInterval = null;
 let isSubmitting = false;
 
