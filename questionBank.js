@@ -1860,6 +1860,77 @@ const questionBank = {
         'Home Economics': []
     },
     'JSS2': {
+        'English': [
+            {question:"An inferential question requires the reader to?", a:"Find the answer directly in the text", b:"Make an educated guess based on clues", c:"Memorize the entire passage", d:"Ignore the details", correct:"b"},
+  {question:"What does inference mean?", a:"A direct statement", b:"A conclusion reached from evidence", c:"A question without answer", d:"A type of verb", correct:"b"},
+  {question:"Which of these is an example of an inferential question?", a:"What is the colour of the car?", b:"Why do you think the character was sad?", c:"How many people were there?", d:"When did the story begin?", correct:"b"},
+  {question:"To answer inferential questions, a reader must use?", a:"Only the exact words", b:"Clues from the text and prior knowledge", c:"Random guessing", d:"The last sentence only", correct:"b"},
+  {question:"\"The sky was dark and the wind was howling.\" What can you infer?", a:"It was a sunny day", b:"A storm was approaching", c:"People were laughing", d:"It was time for lunch", correct:"b"},
+  {question:"Inferential questions test a reader's?", a:"Ability to copy text", b:"Ability to read aloud", c:"Ability to read between the lines", d:"Ability to count words", correct:"c"},
+  {question:"The element of a sentence that performs the action is called the?", a:"Object", b:"Subject", c:"Verb", d:"Complement", correct:"b"},
+  {question:"Which of the following is a complete sentence?", a:"Running quickly", b:"The boy ran home", c:"Because she was tired", d:"Under the table", correct:"b"},
+  {question:"The part of a sentence that receives the action is called the?", a:"Subject", b:"Object", c:"Adverb", d:"Conjunction", correct:"b"},
+  {question:"In the sentence \"Mary ate an apple,\" the object is?", a:"Mary", b:"ate", c:"an apple", d:"an", correct:"c"},
+  {question:"A sentence that expresses a complete thought is called?", a:"Fragment", b:"Independent clause", c:"Dependent clause", d:"Phrase", correct:"b"},
+  {question:"Which element of a sentence tells what the subject does?", a:"Subject", b:"Object", c:"Verb", d:"Adjective", correct:"c"},
+  {question:"In \"The happy children played outside,\" the subject is?", a:"happy", b:"children", c:"played", d:"outside", correct:"b"},
+  {question:"A group of words that does not have a subject and verb is called a?", a:"Sentence", b:"Clause", c:"Phrase", d:"Paragraph", correct:"c"},
+  {question:"Which of these is a verb?", a:"Beautiful", b:"Quickly", c:"Run", d:"House", correct:"c"},
+  {question:"The past tense of \"go\" is?", a:"Goes", b:"Going", c:"Went", d:"Gone", correct:"c"},
+  {question:"Which of these is an auxiliary verb?", a:"Eat", b:"Have", c:"Jump", d:"Sleep", correct:"b"},
+  {question:"The present participle form of \"write\" is?", a:"Wrote", b:"Written", c:"Writing", d:"Writes", correct:"c"},
+  {question:"Which verb class shows ability or possibility?", a:"Action verbs", b:"Modal verbs", c:"Transitive verbs", d:"Intransitive verbs", correct:"b"},
+  {question:"In \"She sings beautifully,\" the verb \"sings\" is?", a:"Intransitive", b:"Transitive", c:"Auxiliary", d:"Modal", correct:"a"},
+
+  {question:"Which sentence is grammatically correct?", a:"He go to school daily", b:"He goes to school daily", c:"He going to school daily", d:"He gone to school daily", correct:"b"},
+  {question:"A sentence constructed in the past continuous tense uses?", a:"Was/were + present participle", b:"Has/have + past participle", c:"Will + verb", d:"Verb + ed", correct:"a"},
+  {question:"Which of these is a compound sentence?", a:"I ate and slept", b:"Because I was tired", c:"Running fast", d:"The tall man", correct:"a"},
+  {question:"A simple sentence contains?", a:"Two independent clauses", b:"One independent clause", c:"No verb", d:"Only a subject", correct:"b"},
+
+  {question:"Mosquitoes lay their eggs in?", a:"Dry sand", b:"Stagnant water", c:"Tall grass", d:"Trees", correct:"b"},
+  {question:"Which disease is transmitted by the female anopheles mosquito?", a:"Cholera", b:"Typhoid", c:"Malaria", d:"Ebola", correct:"c"},
+  {question:"The life cycle of a mosquito includes which stage?", a:"Egg, larva, pupa, adult", b:"Egg, caterpillar, cocoon, adult", c:"Egg, nymph, adult", d:"Larva, pupa, adult only", correct:"a"},
+  {question:"Only the ____ mosquito bites humans.", a:"Male", b:"Female", c:"Young", d:"Old", correct:"b"},
+  {question:"Mosquito larvae are commonly found in?", a:"Air", b:"Soil", c:"Water", d:"Fire", correct:"c"},
+  {question:"Which of these prevents mosquito breeding?", a:"Keeping open containers of water", b:"Draining stagnant water", c:"Leaving gutters blocked", d:"Watering plants excessively", correct:"b"},
+
+  {question:"Literature can be defined as?", a:"Written works of art", b:"Mathematical equations", c:"Scientific experiments", d:"Cooking recipes", correct:"a"},
+  {question:"Which of these is a genre of literature?", a:"Prose", b:"Grammar", c:"Arithmetic", d:"Geography", correct:"a"},
+  {question:"Drama is meant to be?", a:"Read silently", b:"Performed on stage", c:"Memorized only", d:"Sung", correct:"b"},
+  {question:"A short story is an example of?", a:"Prose", b:"Poetry", c:"Drama", d:"Epic", correct:"a"},
+  {question:"Which type of literature uses verse and rhythm?", a:"Prose", b:"Poetry", c:"Drama", d:"Novel", correct:"b"},
+  {question:"A novel is a?", a:"Long fictional story", b:"Short poem", c:"Play script", d:"Biography", correct:"a"},
+
+  {question:"\"The cat jumped __ the table.\" Which preposition fits?", a:"on", b:"under", c:"beside", d:"through", correct:"a"},
+  {question:"Which of these is a preposition?", a:"Run", b:"Beautiful", c:"Between", d:"Quickly", correct:"c"},
+  {question:"She walked __ the bridge. Choose the correct preposition.", a:"across", b:"under", c:"over", d:"through", correct:"a"},
+  {question:"The book was written __ Chinua Achebe.", a:"for", b:"by", c:"with", d:"at", correct:"b"},
+
+  {question:"An argumentative essay seeks to?", a:"Tell a story", b:"Persuade the reader", c:"Describe a place", d:"List facts", correct:"b"},
+  {question:"In an argumentative essay, the writer should?", a:"Present both sides of an issue", b:"Only support one weak point", c:"Avoid giving reasons", d:"Use emotional language only", correct:"a"},
+  {question:"Which of these is a suitable topic for an argumentative essay?", a:"My last holiday", b:"Should students wear uniforms?", c:"How to bake a cake", d:"The colour of my house", correct:"b"},
+  {question:"The introductory paragraph of an argumentative essay should?", a:"State the topic and thesis", b:"Present the conclusion", c:"Give examples only", d:"Avoid the main idea", correct:"a"},
+
+  {question:"An adjective clause modifies a?", a:"Verb", b:"Noun or pronoun", c:"Adverb", d:"Preposition", correct:"b"},
+  {question:"\"The boy who won the race is my friend.\" The adjective clause is?", a:"The boy", b:"who won the race", c:"is my friend", d:"my friend", correct:"b"},
+  {question:"Which word often introduces an adjective clause?", a:"Quickly", b:"Who", c:"And", d:"Beautiful", correct:"b"},
+  {question:"A subclass of adjectives that shows ownership is called?", a:"Demonstrative adjective", b:"Possessive adjective", c:"Interrogative adjective", d:"Quantitative adjective", correct:"b"},
+  {question:"In \"the red car,\" the word \"red\" is a?", a:"Possessive adjective", b:"Demonstrative adjective", c:"Adjective of quality", d:"Adjective of quantity", correct:"c"},
+
+  {question:"Which of these is formed by adding a prefix?", a:"Happiness", b:"Unhappy", c:"Teacher", d:"Quickly", correct:"b"},
+  {question:"The suffix \"-tion\" changes a verb into a?", a:"Noun", b:"Adjective", c:"Adverb", d:"Pronoun", correct:"a"},
+  {question:"Which of these is a compound word?", a:"Beautiful", b:"Sunflower", c:"Running", d:"Carefully", correct:"b"},
+  {question:"The word \"misunderstand\" is formed by adding?", a:"Suffix only", b:"Prefix and root word", c:"Two suffixes", d:"Two prefixes", correct:"b"},
+
+  {question:"Concord refers to?", a:"Agreement between subject and verb", b:"The end of a sentence", c:"A type of adjective", d:"A preposition", correct:"a"},
+  {question:"Which sentence shows correct concord?", a:"The dog run fast", b:"The dog runs fast", c:"The dog running fast", d:"The dog are fast", correct:"b"},
+  {question:"\"Neither of the boys __ present.\" Choose the correct verb.", a:"were", b:"are", c:"was", d:"have", correct:"c"},
+
+  {question:"Which of these is a consonant sound?", a:"/i:/", b:"/b/", c:"/a:/", d:"/u:/", correct:"b"},
+  {question:"The consonant sound /ʃ/ is found in which word?", a:"Ship", b:"Zip", c:"Thin", d:"This", correct:"a"},
+  {question:"Which of these is a voiced consonant?", a:"/p/", b:"/t/", c:"/d/", d:"/k/", correct:"c"},
+  {question:"The consonant sound at the end of \"sing\" is?", a:"/g/", b:"/ŋ/", c:"/n/", d:"/k/", correct:"b"}
+        ],
 'SCS': [
 {question:"A system of government in which citizens vote for representatives to make laws on their behalf is called _____.", a:"Direct democracy", b:"Representative democracy", c:"Autocracy", d:"Oligarchy", correct:"b"},
 {question:"The principle that the law applies equally to all citizens, including government officials, is called _____.", a:"Separation of powers", b:"Rule of law", c:"Democracy", d:"Constitutional supremacy", correct:"b"},
