@@ -19,6 +19,7 @@ function startExam() {
 
     const student = { name, class: classLevel, subject };
 
+    // ✅ Save properly
     localStorage.setItem("currentStudent", JSON.stringify(student));
 
     window.location.href = "exam.html";
@@ -35,16 +36,18 @@ function getStudent() {
 
 // ================= SHUFFLE =================
 function shuffle(arr) {
-    return arr.sort(() => Math.random() - 0.5);
+    return [...arr].sort(() => Math.random() - 0.5);
 }
 
-// ================= INIT AFTER DOM =================
+// ================= INIT AFTER LOAD =================
 document.addEventListener("DOMContentLoaded", () => {
 
+    // Only run on exam page
     if (!window.location.pathname.includes("exam.html")) return;
 
     initExam();
 
+    // NEXT BUTTON
     document.getElementById("nextBtn")?.addEventListener("click", () => {
         if (currentQuestion < examQuestions.length - 1) {
             currentQuestion++;
@@ -52,6 +55,7 @@ document.addEventListener("DOMContentLoaded", () => {
         }
     });
 
+    // SUBMIT BUTTON
     document.getElementById("submitBtn")?.addEventListener("click", () => {
         submitExam(false);
     });
@@ -73,16 +77,16 @@ function initExam() {
     }
 
     if (!questionBank[student.class] || !questionBank[student.class][student.subject]) {
-        alert("No questions found.");
+        alert("No questions available.");
         return;
     }
 
-    examQuestions = shuffle([...questionBank[student.class][student.subject]]).slice(0, 50);
+    examQuestions = shuffle(questionBank[student.class][student.subject]).slice(0, 50);
 
-    // fallback safety (never empty)
-    if (examQuestions.length === 0) {
+    // ✅ fallback (never crash)
+    if (!examQuestions.length) {
         examQuestions = [{
-            question: "Demo Question: 2 + 2 = ?",
+            question: "2 + 2 = ?",
             a: "3", b: "4", c: "5", d: "6",
             correct: "b"
         }];
@@ -97,6 +101,8 @@ function initExam() {
 
 // ================= LOAD QUESTION =================
 function loadQuestion() {
+    if (!examQuestions.length) return;
+
     const q = examQuestions[currentQuestion];
 
     document.getElementById("question").innerText =
@@ -180,14 +186,14 @@ function startTimer() {
 
         if (time <= 0) {
             clearInterval(timerInterval);
-            submitExam(true); // auto submit
+            submitExam(true);
         }
     }, 1000);
 }
 
 // ================= SUBMIT =================
 async function submitExam(auto = false) {
-    if (isSubmitting) return; // prevent double click
+    if (isSubmitting) return;
     isSubmitting = true;
 
     console.log("Submitting exam...");
@@ -200,21 +206,21 @@ async function submitExam(auto = false) {
         return;
     }
 
-    // calculate score safely
+    // ✅ calculate score
     let score = 0;
-
     examQuestions.forEach((q, i) => {
         if (studentAnswers[i] === q.correct) score++;
     });
 
+    // ✅ ALWAYS VALID DATA (no more incomplete errors)
     const examData = {
         name: student.name || "Unknown",
         class: student.class || "Unknown",
         subject: student.subject || "Unknown",
-        score: score || 0,
-        total: examQuestions.length || 1,
+        score: Number(score),
+        total: Number(examQuestions.length),
         date: new Date().toISOString(),
-        answers: studentAnswers || []
+        answers: Array.isArray(studentAnswers) ? studentAnswers : []
     };
 
     console.log("Sending:", examData);
@@ -240,15 +246,16 @@ async function submitExam(auto = false) {
         `;
 
     } catch (err) {
-        console.error(err);
+        console.error("Submit error:", err);
 
-        // fallback (NEVER lose submission)
-        document.body.innerHTML = `
-            <h1>⚠️ Submission Saved Locally</h1>
-            <p>Server issue. Data stored on device.</p>
-        `;
-
+        // ✅ fallback (NEVER LOSE DATA)
         localStorage.setItem("backupSubmission", JSON.stringify(examData));
+
+        document.body.innerHTML = `
+            <h1>⚠️ Submission Issue</h1>
+            <p>Your answers were saved locally.</p>
+            <p>Please contact admin.</p>
+        `;
     }
 
     isSubmitting = false;
