@@ -1839,6 +1839,7 @@ const questionBank = {
   {question:"A chair is ______", a:"living", b:"non-living", c:"animal", d:"plant", correct:"b"},
   {question:"Science helps us understand ______", a:"world", b:"food only", c:"school only", d:"play only", correct:"a"}
   ],
+  'Home Economics': [],
     },
     'Pry4': {
 
