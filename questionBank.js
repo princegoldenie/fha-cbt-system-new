@@ -5226,7 +5226,67 @@ const questionBank = {
   {question:"When considering the siting of a retail shop, “zoning regulations” refer to:", a:"Laws that determine what types of businesses can operate in specific areas", b:"The arrangement of goods inside the shop", c:"The store’s opening hours", d:"The pricing strategy of competitors", correct:"a"},
   {question:"The overall purpose of consumer protection is to:", a:"Maximize profits for businesses", b:"Ensure fairness, safety, and informed choice in the marketplace", c:"Reduce the variety of goods available", d:"Increase government control over all retail prices", correct:"b"}
         ],
-        'Marketing': [],
+        'Marketing': [
+  {question:"Market segmentation is the process of?", a:"Selling to everyone", b:"Dividing a market into distinct groups", c:"Fixing prices only", d:"Advertising products", correct:"b"},
+  {question:"Which is NOT a basis for segmentation?", a:"Demographic", b:"Geographic", c:"Psychographic", d:"Mechanical", correct:"d"},
+  {question:"Age, gender and income are?", a:"Geographic", b:"Demographic", c:"Behavioral", d:"Psychographic", correct:"b"},
+  {question:"Lifestyle and personality belong to?", a:"Behavioral", b:"Geographic", c:"Psychographic", d:"Demographic", correct:"c"},
+  {question:"Segmentation helps firms to?", a:"Target customers effectively", b:"Sell to everyone", c:"Increase costs", d:"Avoid advertising", correct:"a"},
+
+  {question:"Consumer behavior studies how people?", a:"Make buying decisions", b:"Produce goods", c:"Set prices", d:"Advertise products", correct:"a"},
+  {question:"Factor influencing behavior?", a:"Cultural factors", b:"Government policy", c:"Transport only", d:"All the above", correct:"a"},
+  {question:"Buying based on friends is?", a:"Cultural", b:"Social", c:"Economic", d:"Personal", correct:"b"},
+  {question:"Motivation and perception are?", a:"Cultural", b:"Psychological", c:"Economic", d:"Social", correct:"b"},
+  {question:"Consumer behavior helps business to?", a:"Understand needs", b:"Produce only", c:"Avoid advertising", d:"Ignore competitors", correct:"a"},
+
+  {question:"Income affects behavior by?", a:"Determining purchasing power", b:"Limiting ads", c:"Changing products", d:"Ignoring demand", correct:"a"},
+  {question:"Consumer loyalty is influenced by?", a:"Brand quality", b:"Packaging only", c:"Price only", d:"None", correct:"a"},
+  {question:"Post-purchase evaluation helps to?", a:"Improve products", b:"Close shop", c:"Stop selling", d:"Reduce cost only", correct:"a"},
+  {question:"A product is anything that?", a:"Satisfies a need", b:"Has price only", c:"Sold in bulk", d:"Exists in shop", correct:"a"},
+  {question:"Example of consumer product?", a:"Soap", b:"Machinery", c:"Office desk", d:"Factory equipment", correct:"a"},
+
+  {question:"Convenience products are?", a:"Bought frequently", b:"Expensive", c:"Industrial", d:"Luxury only", correct:"a"},
+  {question:"Specialty products are bought for?", a:"Unique features", b:"Low price", c:"Availability", d:"Packaging", correct:"a"},
+  {question:"Product quality affects?", a:"Satisfaction and loyalty", b:"Taxes", c:"Packaging", d:"Ads", correct:"a"},
+  {question:"Branding is linked to?", a:"Product identity", b:"Price only", c:"Segmentation", d:"Promotion", correct:"a"},
+  {question:"Product life cycle includes?", a:"Intro, growth, maturity, decline", b:"Production only", c:"Ads only", d:"Sales only", correct:"a"},
+
+  {question:"Product mix means?", a:"All company products", b:"Single price", c:"Packaging", d:"Ads", correct:"a"},
+  {question:"Packaging helps in?", a:"Protecting and promoting", b:"Increasing taxes", c:"Reducing sales", d:"Lowering quality", correct:"a"},
+  {question:"A brand is?", a:"Name or symbol", b:"Price only", c:"Package only", d:"Shop name", correct:"a"},
+  {question:"Strong brand helps to?", a:"Build loyalty", b:"Reduce quality", c:"Avoid marketing", d:"Limit sales", correct:"a"},
+  {question:"Trademark is part of?", a:"Branding", b:"Pricing", c:"Advertising", d:"Promotion", correct:"a"},
+
+  {question:"Brand loyalty means?", a:"Prefer one brand", b:"Switch often", c:"Buy randomly", d:"Ignore products", correct:"a"},
+  {question:"Private brands are owned by?", a:"Retailers", b:"Government", c:"Customers", d:"Suppliers", correct:"a"},
+  {question:"Branding helps to?", a:"Differentiate products", b:"Reduce taxes", c:"Increase cost", d:"Avoid ads", correct:"a"},
+  {question:"National brands are?", a:"Widely sold", b:"One shop", c:"Private", d:"Rare", correct:"a"},
+  {question:"Pricing is deciding?", a:"How much to pay", b:"Advertising", c:"Packaging", d:"Product name", correct:"a"},
+
+  {question:"Penetration pricing?", a:"Low price to enter market", b:"High price", c:"No ads", d:"Reduce quality", correct:"a"},
+  {question:"Skimming pricing?", a:"High price at start", b:"Low price", c:"Reduce production", d:"Free sales", correct:"a"},
+  {question:"Psychological pricing is based on?", a:"Customer perception", b:"Cost only", c:"Ads", d:"Packaging", correct:"a"},
+  {question:"Competitive pricing?", a:"Match rivals", b:"Ignore rivals", c:"Random", d:"Avoid selling", correct:"a"},
+  {question:"Discounts belong to?", a:"Pricing strategies", b:"Branding", c:"Product dev", d:"Promotion", correct:"a"},
+
+  {question:"Price elasticity measures?", a:"Demand vs price", b:"Quality", c:"Ad cost", d:"Packaging", correct:"a"},
+  {question:"Promotion is used to?", a:"Inform and persuade", b:"Reduce quality", c:"Increase cost", d:"Internal sales", correct:"a"},
+  {question:"Personal selling is?", a:"Direct interaction", b:"TV ads", c:"Social media", d:"None", correct:"a"},
+  {question:"Advertising is?", a:"Paid communication", b:"Direct selling", c:"Personal selling", d:"Distribution", correct:"a"},
+  {question:"Sales promotion includes?", a:"Coupons and samples", b:"Packaging", c:"Branding", d:"Pricing", correct:"a"},
+
+  {question:"Public relations aim to?", a:"Build image", b:"Reduce price", c:"Ignore customers", d:"Avoid ads", correct:"a"},
+  {question:"Social media promotion?", a:"Reaches many quickly", b:"Reduces quality", c:"Increases cost only", d:"Confuses buyers", correct:"a"},
+  {question:"Direct marketing involves?", a:"Direct communication", b:"Random ads", c:"Packaging", d:"Pricing", correct:"a"},
+  {question:"Promotion mix is?", a:"Combination of tools", b:"Pricing only", c:"Product only", d:"Branding only", correct:"a"},
+  {question:"Trade promotion targets?", a:"Retailers and wholesalers", b:"Consumers", c:"Government", d:"Competitors", correct:"a"},
+
+  {question:"Consumer promotion is to?", a:"Encourage buying", b:"Ignore customers", c:"Reduce sales", d:"Increase production", correct:"a"},
+  {question:"Advertising helps to?", a:"Inform customers", b:"Reduce production", c:"Avoid marketing", d:"Increase cost", correct:"a"},
+  {question:"Promotion campaign needs?", a:"Clear objectives", b:"Random messages", c:"No plan", d:"Free samples only", correct:"a"},
+  {question:"Sponsorship is a type of?", a:"Promotion", b:"Pricing", c:"Product design", d:"Distribution", correct:"a"},
+  {question:"Effective promotion increases?", a:"Sales and awareness", b:"Cost only", c:"Confusion", d:"Waste", correct:"a"}
+        ],
         'Financial Accounting': [],
         'PHE': [],
         'Digital Tech': [
