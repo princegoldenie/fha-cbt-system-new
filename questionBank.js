@@ -5595,7 +5595,78 @@ const questionBank = {
   {question:"The kinetic energy of particles is lowest in?", a:"solid", b:"liquid", c:"gas", d:"air", correct:"a"},
   {question:"Matter exists commonly in?", a:"2 states", b:"3 states", c:"4 states", d:"5 states", correct:"b"}
         ],
-        'Chemistry': [],
+        'Chemistry': [
+{question:"A student observes that when perfume is sprayed in a corner of a room, the smell spreads across the room after some time. This process is known as", a:"Evaporation", b:"Diffusion", c:"Condensation", d:"Sublimation", correct:"b"},
+{question:"When a solid is heated, its particles begin to vibrate more rapidly. This shows that", a:"Particles are destroyed", b:"Kinetic energy increases", c:"Particles shrink", d:"Mass increases", correct:"b"},
+{question:"A substance has particles that are closely packed but can still move slightly. The substance is most likely a", a:"Gas", b:"Liquid", c:"Solid", d:"Plasma", correct:"c"},
+{question:"A gas expands to fill its container because its particles", a:"Are fixed", b:"Are closely packed", c:"Move freely in all directions", d:"Have no energy", correct:"c"},
+{question:"A chemist measures 32 g of oxygen gas (O₂). How many moles are present?", a:"0.5 mol", b:"1 mol", c:"2 mol", d:"4 mol", correct:"b"},
+
+{question:"If 16 g of oxygen gas is used in an experiment, the number of moles present is", a:"0.25 mol", b:"0.5 mol", c:"1 mol", d:"2 mol", correct:"b"},
+{question:"A sample contains 44 g of carbon dioxide (CO₂). Calculate the number of moles present.", a:"0.5 mol", b:"1 mol", c:"2 mol", d:"4 mol", correct:"b"},
+{question:"A student dissolves 18 g of water (H₂O). How many moles of water are present?", a:"0.5 mol", b:"1 mol", c:"2 mol", d:"3 mol", correct:"b"},
+{question:"Calculate the RMM of calcium carbonate (CaCO₃).", a:"84", b:"96", c:"100", d:"112", correct:"c"},
+{question:"Determine the RMM of ammonia (NH₃).", a:"14", b:"16", c:"17", d:"18", correct:"c"},
+
+{question:"Calculate the RMM of sulphuric acid (H₂SO₄).", a:"96", b:"98", c:"100", d:"102", correct:"b"},
+{question:"A compound contains 12 g of carbon and 32 g of oxygen. What is the percentage of carbon?", a:"20%", b:"27.3%", c:"40%", d:"60%", correct:"b"},
+{question:"A compound has 14 g of nitrogen and 3 g of hydrogen. Calculate the percentage of hydrogen.", a:"10%", b:"15%", c:"17.6%", d:"20%", correct:"c"},
+{question:"A compound contains 24 g of magnesium and 16 g of oxygen. Find the percentage of magnesium.", a:"40%", b:"50%", c:"60%", d:"70%", correct:"c"},
+{question:"Calculate the percentage of oxygen in water (H₂O).", a:"11.1%", b:"50%", c:"88.9%", d:"75%", correct:"c"},
+
+{question:"A compound contains 40% carbon, 6.7% hydrogen and 53.3% oxygen. Determine the empirical formula.", a:"CH₂O", b:"C₂H₄O₂", c:"CHO", d:"CH₃O", correct:"a"},
+{question:"A compound contains 75% carbon and 25% hydrogen. What is its empirical formula?", a:"CH", b:"CH₂", c:"CH₄", d:"C₂H₂", correct:"a"},
+{question:"A compound contains 27.3% carbon and 72.7% oxygen. Determine its empirical formula.", a:"CO", b:"CO₂", c:"C₂O", d:"C₂O₂", correct:"b"},
+{question:"A compound contains 40% hydrogen, 12% sulphur and 48% oxygen. Determine the empirical formula.", a:"H₂SO₄", b:"H₂SO₃", c:"H₂S₂O₄", d:"HSO₄", correct:"a"},
+{question:"A compound contains 20% hydrogen and 80% oxygen. Determine the empirical formula.", a:"H₂O", b:"HO", c:"H₂O₂", d:"HO₂", correct:"a"},
+
+{question:"A sample contains 6.02 × 10²³ molecules. How many moles is this?", a:"0.5 mol", b:"1 mol", c:"2 mol", d:"3 mol", correct:"b"},
+{question:"If a substance has 2 moles, how many particles does it contain?", a:"6.02 × 10²³", b:"1.204 × 10²⁴", c:"3.01 × 10²³", d:"2 × 10²³", correct:"b"},
+{question:"A gas occupies 22.4 dm³ at STP. How many moles is this?", a:"0.5 mol", b:"1 mol", c:"2 mol", d:"3 mol", correct:"b"},
+{question:"A gas occupies 44.8 dm³ at STP. How many moles is this?", a:"1 mol", b:"2 mol", c:"3 mol", d:"4 mol", correct:"b"},
+{question:"A student heats a substance and observes that its particles move faster. This means", a:"Temperature decreases", b:"Kinetic energy increases", c:"Particles shrink", d:"Mass increases", correct:"b"},
+
+{question:"A compound has RMM = 60 and empirical formula mass = 30. What is the molecular formula?", a:"CH₂O", b:"C₂H₄O₂", c:"CHO", d:"C₃H₆O₃", correct:"b"},
+{question:"A compound has empirical formula CH₂ and RMM = 28. What is the molecular formula?", a:"CH₂", b:"C₂H₄", c:"C₃H₆", d:"CH₄", correct:"b"},
+{question:"A compound contains 14 g of nitrogen and 16 g of oxygen. Find the empirical formula.", a:"NO", b:"NO₂", c:"N₂O", d:"N₂O₂", correct:"b"},
+{question:"Calculate the RMM of NaCl.", a:"58.5", b:"60", c:"62", d:"64", correct:"a"},
+{question:"A student finds that 58.5 g of NaCl contains 1 mole. What is the mass of 2 moles?", a:"58.5 g", b:"100 g", c:"117 g", d:"120 g", correct:"c"},
+
+{question:"A compound contains 24 g carbon and 4 g hydrogen. Empirical formula is", a:"CH", b:"CH₂", c:"CH₄", d:"C₂H₆", correct:"b"},
+{question:"If 9 g of water is used, number of moles is", a:"0.5", b:"1", c:"2", d:"3", correct:"a"},
+{question:"A gas occupies 11.2 dm³ at STP. Moles =", a:"0.25", b:"0.5", c:"1", d:"2", correct:"b"},
+{question:"A compound contains 48 g oxygen out of total 60 g. % oxygen =", a:"60%", b:"70%", c:"80%", d:"90%", correct:"c"},
+{question:"A compound has RMM 44 and empirical formula CO. Molecular formula is", a:"CO", b:"CO₂", c:"C₂O₂", d:"C₂O", correct:"b"},
+
+{question:"A student observes particles moving randomly under a microscope. This is", a:"Diffusion", b:"Brownian motion", c:"Conduction", d:"Convection", correct:"b"},
+{question:"A compound contains 12 g of carbon and 4 g of hydrogen. Determine the empirical formula.", a:"CH", b:"CH₂", c:"CH₄", d:"C₂H₄", correct:"a"},
+{question:"A compound contains 28 g of nitrogen and 32 g of oxygen. What is the empirical formula?", a:"NO", b:"NO₂", c:"N₂O", d:"N₂O₂", correct:"b"},
+{question:"A gas sample contains 3.01 × 10²³ molecules. How many moles is this?", a:"0.25 mol", b:"0.5 mol", c:"1 mol", d:"2 mol", correct:"b"},
+{question:"A compound has RMM = 180 and empirical formula mass = 30. What is its molecular formula?", a:"CH₂O", b:"C₂H₄O₂", c:"C₆H₁₂O₆", d:"C₃H₆O₃", correct:"c"},
+
+{question:"A sample of gas occupies 67.2 dm³ at STP. Number of moles present is", a:"1 mol", b:"2 mol", c:"3 mol", d:"4 mol", correct:"c"},
+{question:"A compound contains 16 g oxygen and 2 g hydrogen. Determine empirical formula.", a:"HO", b:"H₂O", c:"H₂O₂", d:"HO₂", correct:"b"},
+{question:"Calculate the RMM of methane (CH₄).", a:"12", b:"14", c:"16", d:"18", correct:"c"},
+{question:"A student measures 64 g of oxygen gas. How many moles are present?", a:"1 mol", b:"2 mol", c:"3 mol", d:"4 mol", correct:"b"},
+{question:"A compound contains 23 g sodium and 35.5 g chlorine. Percentage of sodium is", a:"39.3%", b:"50%", c:"60%", d:"65%", correct:"a"},
+
+{question:"A compound contains 10 g hydrogen and 90 g oxygen. Empirical formula is", a:"HO", b:"H₂O", c:"H₂O₂", d:"HO₂", correct:"b"},
+{question:"A sample contains 2 moles of a substance. Number of particles present is", a:"6.02 × 10²³", b:"1.204 × 10²⁴", c:"3.01 × 10²³", d:"2 × 10²³", correct:"b"},
+{question:"A gas occupies 5.6 dm³ at STP. Number of moles is", a:"0.25 mol", b:"0.5 mol", c:"1 mol", d:"2 mol", correct:"a"},
+{question:"A compound has empirical formula CH and RMM = 26. Molecular formula is", a:"CH", b:"C₂H₂", c:"C₃H₃", d:"CH₂", correct:"b"},
+{question:"A compound contains 32 g sulphur and 32 g oxygen. Empirical formula is", a:"SO", b:"SO₂", c:"SO₃", d:"S₂O", correct:"b"},
+
+{question:"A student heats a gas and observes expansion. This occurs because", a:"Particles shrink", b:"Particles move faster", c:"Particles disappear", d:"Particles combine", correct:"b"},
+{question:"A compound contains 14 g nitrogen and 32 g oxygen. Percentage of nitrogen is", a:"20%", b:"30.4%", c:"40%", d:"50%", correct:"b"},
+{question:"A gas occupies 2.24 dm³ at STP. Number of moles is", a:"0.1 mol", b:"0.2 mol", c:"0.5 mol", d:"1 mol", correct:"a"},
+{question:"A compound contains 6 g hydrogen and 48 g oxygen. Empirical formula is", a:"HO", b:"H₂O", c:"H₂O₂", d:"HO₂", correct:"b"},
+{question:"A compound has RMM = 28 and empirical formula CH₂. Molecular formula is", a:"CH₂", b:"C₂H₄", c:"C₃H₆", d:"CH₄", correct:"b"},
+
+{question:"A compound contains 12 g carbon and 32 g oxygen. Empirical formula is", a:"CO", b:"CO₂", c:"C₂O₂", d:"C₂O", correct:"b"},
+{question:"A gas occupies 89.6 dm³ at STP. Number of moles is", a:"2 mol", b:"3 mol", c:"4 mol", d:"5 mol", correct:"c"},
+{question:"A compound contains 24 g carbon and 8 g hydrogen. Empirical formula is", a:"CH", b:"CH₂", c:"CH₄", d:"C₂H₄", correct:"b"},
+{question:"A compound has empirical formula CH₂O and RMM = 60. Molecular formula is", a:"CH₂O", b:"C₂H₄O₂", c:"C₃H₆O₃", d:"C₄H₈O₄", correct:"b"}
+        ],
         'Government': [
   {question:"A political party is an organized group of people who _____", a:"Seek to control government through elections", b:"Oppose all forms of government", c:"Only engage in social activities", d:"Focus on business interests", correct:"a"},
   {question:"The main function of a political party is to _____", a:"Organize social events", b:"Nominate candidates for elections", c:"Run businesses", d:"Enforce laws", correct:"b"},
@@ -5910,7 +5981,79 @@ const questionBank = {
   {question:"Sponsorship is a type of?", a:"Promotion", b:"Pricing", c:"Product design", d:"Distribution", correct:"a"},
   {question:"Effective promotion increases?", a:"Sales and awareness", b:"Cost only", c:"Confusion", d:"Waste", correct:"a"}
         ],
-        'Financial Accounting': [],
+        'Financial Accounting': [
+  {question:"Book-keeping is primarily concerned with:", a:"Interpreting financial statements", b:"The systematic recording of financial transactions", c:"Auditing company accounts", d:"Preparing tax returns", correct:"b"},
+  {question:"Which of the following best describes the history of accounting?", a:"Accounting began only after the industrial revolution", b:"Accounting practices date back to ancient civilizations such as Mesopotamia and Egypt", c:"Accounting was invented by Luca Pacioli in the 20th century", d:"Accounting only became necessary with the introduction of paper money", correct:"b"},
+  {question:"Who is often referred to as the Father of Accounting?", a:"Adam Smith", b:"Luca Pacioli", c:"John Maynard Keynes", d:"Leonardo da Vinci", correct:"b"},
+  {question:"A major advantage of accounting is that it:", a:"Guarantees business profitability", b:"Provides a permanent record of financial transactions", c:"Eliminates the need for internal controls", d:"Prevents all fraud", correct:"b"},
+  {question:"Which of the following is a limitation of accounting?", a:"It records only monetary transactions", b:"It ensures accuracy of all figures", c:"It prevents business losses", d:"It eliminates the need for management decisions", correct:"a"},
+
+  {question:"The accounting equation is expressed as:", a:"Assets = Liabilities + Capital", b:"Assets = Liabilities – Capital", c:"Assets + Liabilities = Capital", d:"Capital = Assets + Liabilities", correct:"a"},
+  {question:"If a business has assets of ₦500,000 and liabilities of ₦200,000, the owner’s capital is:", a:"₦700,000", b:"₦500,000", c:"₦300,000", d:"₦200,000", correct:"c"},
+  {question:"The purchase of office equipment for cash will:", a:"Increase assets and increase liabilities", b:"Increase assets and decrease assets", c:"Increase assets and increase capital", d:"Decrease assets and decrease liabilities", correct:"b"},
+  {question:"Which of the following is a book of original entry?", a:"Ledger", b:"Trial balance", c:"Cashbook", d:"Financial statement", correct:"c"},
+  {question:"The journal records transactions:", a:"Alphabetically", b:"Chronologically", c:"By account type", d:"At year end only", correct:"b"},
+
+  {question:"The ledger is best described as:", a:"Book of original entry", b:"Book of secondary entry", c:"Statement of financial position", d:"Summary of cash only", correct:"b"},
+  {question:"Transferring entries from journal to ledger is called:", a:"Balancing", b:"Posting", c:"Journalizing", d:"Abstracting", correct:"b"},
+  {question:"A cashbook is both a book of original entry and:", a:"Ledger account", b:"Income statement", c:"Trial balance", d:"Balance sheet", correct:"a"},
+  {question:"The cashbook records:", a:"Only credit sales", b:"Cash and bank transactions", c:"All purchases", d:"Payments only", correct:"b"},
+  {question:"Trial balance is prepared to:", a:"Show financial position", b:"Check arithmetic accuracy", c:"Calculate profit", d:"Record transactions", correct:"b"},
+
+  {question:"Double-entry bookkeeping:", a:"Eliminates errors", b:"Records dual effect of transactions", c:"Is very simple", d:"Records only cash", correct:"b"},
+  {question:"Double-entry system became common in:", a:"Ancient Greece", b:"Roman Empire", c:"Renaissance Italy", d:"19th century England", correct:"c"},
+  {question:"A disadvantage of accounting is:", a:"Historical information", b:"Records both events", c:"Guarantees success", d:"No judgment needed", correct:"a"},
+  {question:"Accounting equation balances because:", a:"Assets > liabilities", b:"Dual effect of transactions", c:"Capital equals liabilities", d:"Government law", correct:"b"},
+  {question:"Owner withdrawing cash causes:", a:"Decrease assets & capital", b:"Increase assets", c:"Decrease liabilities", d:"Increase capital", correct:"a"},
+
+  {question:"First book of recording transactions:", a:"Ledger", b:"Trial balance", c:"Book of original entry", d:"Balance sheet", correct:"c"},
+  {question:"Which is a book of original entry?", a:"Sales ledger", b:"Purchases ledger", c:"General ledger", d:"Sales journal", correct:"d"},
+  {question:"Entry affecting more than two accounts:", a:"Simple", b:"Compound", c:"Opening", d:"Closing", correct:"b"},
+  {question:"Customer accounts are in:", a:"General ledger", b:"Sales ledger", c:"Purchases ledger", d:"Cashbook", correct:"b"},
+  {question:"Purchases ledger contains:", a:"Customers", b:"Suppliers", c:"Assets", d:"Capital", correct:"b"},
+
+  {question:"Discount allowed is recorded in:", a:"Cash column", b:"Bank column", c:"Discount allowed column", d:"Discount received column", correct:"c"},
+  {question:"Contra entry occurs when:", a:"Cash deposited in bank", b:"Discount given", c:"Credit purchase", d:"Bad debt written off", correct:"a"},
+  {question:"Trial balance will not balance if:", a:"Transaction omitted", b:"Equal entries made", c:"One-sided error", d:"Principle error", correct:"c"},
+  {question:"Wrong classification of account is:", a:"Omission", b:"Principle", c:"Compensating", d:"Original entry", correct:"b"},
+  {question:"Main purpose of trial balance:", a:"Find profit", b:"Prepare statements", c:"Check debit = credit", d:"Record transactions", correct:"c"},
+
+  {question:"Source document for credit sales:", a:"Purchase invoice", b:"Sales invoice", c:"Receipt", d:"Credit note", correct:"b"},
+  {question:"Returns inwards journal records:", a:"Goods returned to suppliers", b:"Goods returned by customers", c:"Cash sales", d:"Credit purchases", correct:"b"},
+  {question:"Credit purchases recorded in:", a:"Sales journal", b:"Purchases journal", c:"Cashbook", d:"General journal", correct:"b"},
+  {question:"General journal records:", a:"Cash only", b:"Credit sales", c:"Special transactions", d:"All purchases", correct:"c"},
+  {question:"Left side of ledger:", a:"Credit", b:"Debit", c:"Balance", d:"Income", correct:"b"},
+
+  {question:"Increase in assets:", a:"Debit", b:"Credit", c:"Contra", d:"Reversal", correct:"a"},
+  {question:"Increase in capital:", a:"Debit", b:"Credit", c:"Debit capital", d:"Contra", correct:"b"},
+  {question:"Debit balance in cashbook means:", a:"Overdraft", b:"Cash available", c:"Not balanced", d:"Debt owed", correct:"b"},
+  {question:"Discount received is recorded:", a:"Debit side", b:"Credit side", c:"Purchases account", d:"Sales account", correct:"b"},
+  {question:"Revenue expenditure example:", a:"Building", b:"Repairs", c:"New equipment", d:"Land legal fees", correct:"b"},
+
+  {question:"Business continues indefinitely:", a:"Consistency", b:"Going concern", c:"Matching", d:"Materiality", correct:"b"},
+  {question:"Match revenue with cost:", a:"Prudence", b:"Matching", c:"Entity", d:"Realization", correct:"b"},
+  {question:"Business separate from owner:", a:"Entity concept", b:"Consistency", c:"Matching", d:"Materiality", correct:"a"},
+  {question:"Credit balance in cashbook:", a:"Cash", b:"Bank", c:"Overdraft", d:"Discount", correct:"c"},
+  {question:"Sales journal total posted to:", a:"Debit sales", b:"Credit sales", c:"Debit purchases", d:"Credit purchases", correct:"b"},
+
+  {question:"Error not affecting trial balance:", a:"Wrong amount both sides", b:"Omission", c:"Wrong account same amount", d:"Wrong amount one side", correct:"c"},
+  {question:"Petty cashbook records:", a:"All payments", b:"Large payments", c:"Small expenses", d:"Bank transactions", correct:"c"},
+  {question:"Imprest system means:", a:"Fixed float reimbursed", b:"Salary paid", c:"No control", d:"Credit only", correct:"a"},
+  {question:"Book for cash & bank:", a:"Cashbook", b:"Ledger", c:"Trial balance", d:"Journal", correct:"a"},
+  {question:"Balancing account means:", a:"Find difference", b:"Post entries", c:"Journalize", d:"Prepare TB", correct:"a"},
+
+  {question:"Trial balance is:", a:"Financial statement", b:"Proof of accuracy", c:"List of balances", d:"Before posting", correct:"c"},
+  {question:"Suspense account is used when:", a:"TB disagrees", b:"Wrong account", c:"Asset sold", d:"Credit sale", correct:"a"},
+  {question:"Normal balance of liability:", a:"Debit", b:"Credit", c:"Nil", d:"Contra", correct:"b"},
+  {question:"Credit note recorded in:", a:"Sales journal", b:"Returns inwards", c:"Returns outwards", d:"Purchases journal", correct:"b"},
+  {question:"Debit note relates to:", a:"Goods returned to supplier", b:"Goods returned by customer", c:"Credit purchase", d:"Cash sale", correct:"a"},
+
+  {question:"Limitation of accounting:", a:"Decision making", b:"Historical nature", c:"Tax help", d:"Control", correct:"b"},
+  {question:"Advantage of accounting:", a:"Ignores quality", b:"Helps comparison", c:"Estimates", d:"Past only", correct:"b"},
+  {question:"Accounting equation affected by:", a:"Credit purchase", b:"Cash payment", c:"Cash receipt", d:"All of the above", correct:"d"},
+  {question:"Role of bookkeeping:", a:"Analysis", b:"Recording transactions", c:"Auditing", d:"Tax advice", correct:"b"},
+  {question:"Double-entry principle:", a:"Record twice same account", b:"Debit equals credit", c:"Cash only", d:"Chronological only", correct:"b"}
+        ],
         'PHE': [],
         'Digital Tech': [
   { "question": "Information processing is the _____.", "a": "Collection of raw data", "b": "Transformation of data into meaningful information", "c": "Storage of files", "d": "Display of output", "correct": "b" },
@@ -6376,8 +6519,91 @@ const questionBank = {
   {"question":"The higher the temperature, the","a":"slower particles move","b":"faster particles move","c":"particles stop","d":"particles shrink","correct":"b"},
   {"question":"Kinetic theory explains","a":"heat only","b":"particle motion","c":"force only","d":"pressure only","correct":"b"}
         ],
+            'Chemistry': [
+{question:"A substance spreads uniformly in a container over time without stirring. This process is best explained by", a:"conduction", b:"convection", c:"diffusion", d:"radiation", correct:"c"},
+{question:"When a solid is heated, it expands because", a:"particles increase in size", b:"particles move faster and farther apart", c:"mass increases", d:"density increases", correct:"b"},
+{question:"A gas fills any container it is placed in because its particles", a:"are fixed", b:"move randomly with high energy", c:"are closely packed", d:"have low kinetic energy", correct:"b"},
+{question:"Which statement best explains Brownian motion?", a:"particles are at rest", b:"particles move randomly", c:"particles are large", d:"particles are fixed", correct:"b"},
 
-            'Chemistry': [],
+{question:"A compound contains 12 g carbon and 32 g oxygen. Determine its empirical formula.", a:"CO", b:"CO₂", c:"C₂O₂", d:"C₂O", correct:"b"},
+{question:"A compound contains 24 g carbon and 4 g hydrogen. Determine its empirical formula.", a:"CH", b:"CH₂", c:"CH₄", d:"C₂H₄", correct:"a"},
+{question:"A compound contains 14 g nitrogen and 16 g oxygen. What is the empirical formula?", a:"NO", b:"NO₂", c:"N₂O", d:"N₂O₂", correct:"b"},
+{question:"A compound contains 40% carbon, 6.7% hydrogen and 53.3% oxygen. Determine the empirical formula.", a:"CH₂O", b:"CHO", c:"C₂H₄O₂", d:"CH₃O", correct:"a"},
+
+{question:"A compound has empirical formula CH₂ and RMM = 28. What is the molecular formula?", a:"CH₂", b:"C₂H₄", c:"C₃H₆", d:"CH₄", correct:"b"},
+{question:"A compound has RMM = 60 and empirical formula CH₂O. What is the molecular formula?", a:"CH₂O", b:"C₂H₄O₂", c:"C₃H₆O₃", d:"C₄H₈O₄", correct:"b"},
+
+{question:"Calculate the percentage of carbon in CO₂.", a:"27.3%", b:"50%", c:"72.7%", d:"40%", correct:"a"},
+{question:"Calculate the percentage of oxygen in CO₂.", a:"27.3%", b:"50%", c:"72.7%", d:"60%", correct:"c"},
+{question:"A compound contains 23 g sodium and 35.5 g chlorine. Percentage of sodium is", a:"39.3%", b:"50%", c:"60%", d:"65%", correct:"a"},
+{question:"A compound contains 10 g hydrogen and 90 g oxygen. Determine the empirical formula.", a:"HO", b:"H₂O", c:"H₂O₂", d:"HO₂", correct:"b"},
+
+{question:"The electronic configuration of sodium (Na, 11) is", a:"2,8,1", b:"2,8,2", c:"2,6,3", d:"2,7,2", correct:"a"},
+{question:"The electronic configuration of oxygen (8) is", a:"2,6", b:"2,8", c:"2,5", d:"2,7", correct:"a"},
+{question:"An atom with configuration 2,8,7 will", a:"lose 1 electron", b:"gain 1 electron", c:"lose 7 electrons", d:"remain stable", correct:"b"},
+{question:"An atom with configuration 2,8,1 is likely to", a:"gain electron", b:"lose electron", c:"share electrons only", d:"be inert", correct:"b"},
+
+{question:"Which of the following is a noble gas configuration?", a:"2,8", b:"2,7", c:"2,6", d:"2,5", correct:"a"},
+{question:"The valency of an atom with configuration 2,8,6 is", a:"2", b:"4", c:"6", d:"8", correct:"a"},
+
+{question:"A compound contains 32 g sulphur and 32 g oxygen. Determine empirical formula.", a:"SO", b:"SO₂", c:"SO₃", d:"S₂O", correct:"b"},
+{question:"A compound contains 6 g hydrogen and 48 g oxygen. Empirical formula is", a:"HO", b:"H₂O", c:"H₂O₂", d:"HO₂", correct:"b"},
+{question:"A compound contains 24 g magnesium and 16 g oxygen. Percentage of magnesium is", a:"40%", b:"50%", c:"60%", d:"70%", correct:"c"},
+
+{question:"Electronic configuration of aluminium (13) is", a:"2,8,3", b:"2,8,1", c:"2,6,5", d:"2,7,4", correct:"a"},
+{question:"An atom with configuration 2,8,3 has valency", a:"1", b:"2", c:"3", d:"4", correct:"c"},
+
+{question:"A gas expands when heated because", a:"particles shrink", b:"particles move faster", c:"mass increases", d:"pressure disappears", correct:"b"},
+{question:"A compound has RMM = 180 and empirical formula CH₂O. Molecular formula is", a:"C₂H₄O₂", b:"C₃H₆O₃", c:"C₆H₁₂O₆", d:"CH₂O", correct:"c"},
+
+{question:"The electronic configuration of chlorine (17) is", a:"2,8,7", b:"2,8,8", c:"2,7,8", d:"2,6,9", correct:"a"},
+{question:"Chlorine tends to", a:"lose electron", b:"gain electron", c:"remain neutral", d:"lose 7 electrons", correct:"b"},
+
+{question:"A compound contains 12 g carbon and 4 g hydrogen. Empirical formula is", a:"CH", b:"CH₂", c:"CH₄", d:"C₂H₂", correct:"a"},
+{question:"Percentage of hydrogen in water is", a:"11.1%", b:"50%", c:"88.9%", d:"25%", correct:"a"},
+
+{question:"A compound contains 48 g oxygen out of 60 g total. Percentage oxygen is", a:"60%", b:"70%", c:"80%", d:"90%", correct:"c"},
+{question:"An atom with configuration 2,8,8 is", a:"reactive", b:"unstable", c:"inert", d:"metallic", correct:"c"},
+
+{question:"Which particles move fastest?", a:"solids", b:"liquids", c:"gases", d:"plasma", correct:"c"},
+{question:"A compound contains 28 g nitrogen and 32 g oxygen. Empirical formula is", a:"NO", b:"NO₂", c:"N₂O", d:"N₂O₂", correct:"b"},
+
+{question:"Electronic configuration determines", a:"mass", b:"chemical properties", c:"colour", d:"size", correct:"b"},
+{question:"A metal atom loses electrons to form", a:"anion", b:"cation", c:"molecule", d:"compound", correct:"b"},
+{question:"A non-metal gains electrons to form", a:"cation", b:"anion", c:"molecule", d:"atom", correct:"b"},
+
+{question:"A compound has empirical formula CH and RMM = 26. Molecular formula is", a:"CH", b:"C₂H₂", c:"C₃H₃", d:"CH₂", correct:"b"},
+{question:"A compound contains 75% carbon and 25% hydrogen. Empirical formula is", a:"CH", b:"CH₂", c:"CH₄", d:"C₂H₂", correct:"a"},
+
+{question:"A substance that cannot be broken down chemically is", a:"compound", b:"mixture", c:"element", d:"solution", correct:"c"},
+{question:"Diffusion occurs faster in gases because", a:"particles are larger", b:"particles move faster", c:"particles are fixed", d:"particles are heavy", correct:"b"},
+
+{question:"An atom with configuration 2,7 has valency", a:"1", b:"2", c:"3", d:"7", correct:"a"},
+{question:"A compound contains 16 g oxygen and 2 g hydrogen. Empirical formula is", a:"HO", b:"H₂O", c:"H₂O₂", d:"HO₂", correct:"b"},
+
+{question:"A compound has RMM 44 and empirical formula CO. Molecular formula is", a:"CO", b:"CO₂", c:"C₂O₂", d:"C₂O", correct:"b"},
+{question:"Particles in liquids are", a:"fixed", b:"close but movable", c:"widely spaced", d:"not arranged", correct:"b"},
+
+{question:"A compound contains 24 g carbon and 8 g hydrogen. Empirical formula is", a:"CH", b:"CH₂", c:"CH₄", d:"C₂H₄", correct:"b"},
+{question:"A compound contains 32 g oxygen and 32 g sulphur. Empirical formula is", a:"SO", b:"SO₂", c:"SO₃", d:"S₂O", correct:"b"},
+
+{question:"Electronic configuration of magnesium (12) is", a:"2,8,2", b:"2,8,1", c:"2,6,4", d:"2,7,3", correct:"a"},
+{question:"Magnesium tends to", a:"gain electrons", b:"lose electrons", c:"remain stable", d:"gain 2 electrons", correct:"b"},
+
+{question:"A compound contains 20% hydrogen and 80% oxygen. Empirical formula is", a:"HO", b:"H₂O", c:"H₂O₂", d:"HO₂", correct:"b"},
+{question:"A compound has empirical formula CH₂ and RMM = 42. Molecular formula is", a:"C₂H₄", b:"C₃H₆", c:"C₄H₈", d:"CH₂", correct:"b"},
+
+{question:"Heating increases particle motion because", a:"energy increases", b:"mass increases", c:"particles shrink", d:"pressure disappears", correct:"a"},
+{question:"A compound contains 12 g carbon and 32 g oxygen. % oxygen is", a:"27.3%", b:"72.7%", c:"50%", d:"40%", correct:"b"},
+
+{question:"An atom with configuration 2,8,4 has valency", a:"2", b:"4", c:"6", d:"8", correct:"b"},
+{question:"A compound contains 14 g nitrogen and 3 g hydrogen. % hydrogen is", a:"10%", b:"15%", c:"17.6%", d:"20%", correct:"c"},
+
+{question:"Particles in solids", a:"move freely", b:"are fixed but vibrate", c:"are far apart", d:"have no motion", correct:"b"},
+{question:"A compound has RMM = 30 and empirical formula CH₂O. Molecular formula is", a:"CH₂O", b:"C₂H₄O₂", c:"CHO", d:"C₃H₆O₃", correct:"a"},
+
+{question:"Chemical properties of an element depend mainly on", a:"mass number", b:"electronic configuration", c:"density", d:"colour", correct:"b"}
+ ],
         'Government': [
   {question:"A political party is an organized group of people who _____", a:"Seek to control government through elections", b:"Oppose all forms of government", c:"Only engage in social activities", d:"Focus on business interests", correct:"a"},
   {question:"The main function of a political party is to _____", a:"Organize social events", b:"Nominate candidates for elections", c:"Run businesses", d:"Enforce laws", correct:"b"},
