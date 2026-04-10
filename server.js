@@ -102,3 +102,14 @@ async function startServer() {
 
 // ================= RUN =================
 startServer();
+
+
+app.get("/questions", async (req, res) => {
+    try {
+        const questions = await db.collection("questions").find().toArray();
+        res.json(questions);
+    } catch (err) {
+        console.error("❌ Question fetch error:", err);
+        res.status(500).json({ error: "Cannot load questions" });
+    }
+});
