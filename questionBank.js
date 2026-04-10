@@ -6932,7 +6932,70 @@ const questionBank = {
         ]
     },
     'SS3': {
-        'Mathematics': [],
+        'Mathematics': [
+  {question:"Simplify: 2 + 3 × 4", a:"20", b:"14", c:"10", d:"24", correct:"b"},
+  {question:"Solve: 5 + 7 = ?", a:"10", b:"11", c:"12", d:"13", correct:"c"},
+  {question:"What is 12 ÷ 3?", a:"3", b:"4", c:"5", d:"6", correct:"b"},
+  {question:"Find 15% of 200", a:"20", b:"25", c:"30", d:"35", correct:"c"},
+  {question:"Simplify: 3²", a:"6", b:"9", c:"12", d:"18", correct:"b"},
+
+  {question:"Square root of 49 is:", a:"5", b:"6", c:"7", d:"8", correct:"c"},
+  {question:"10 × 0 = ?", a:"10", b:"1", c:"0", d:"None", correct:"c"},
+  {question:"HCF of 12 and 18 is:", a:"3", b:"6", c:"9", d:"12", correct:"b"},
+  {question:"LCM of 4 and 6 is:", a:"10", b:"12", c:"14", d:"16", correct:"b"},
+  {question:"π (pi) is approximately:", a:"2.14", b:"3.14", c:"3.41", d:"4.13", correct:"b"},
+
+  {question:"Area of rectangle = ?", a:"l × b", b:"l + b", c:"2(l+b)", d:"l/b", correct:"a"},
+  {question:"Perimeter of square = ?", a:"4l", b:"l²", c:"2l", d:"l/4", correct:"a"},
+  {question:"Area of triangle = ?", a:"1/2 bh", b:"bh", c:"l × b", d:"2bh", correct:"a"},
+  {question:"Sum of angles in triangle:", a:"90°", b:"180°", c:"360°", d:"270°", correct:"b"},
+  {question:"Sum of angles in a straight line:", a:"90°", b:"180°", c:"360°", d:"270°", correct:"b"},
+
+  {question:"Probability of a sure event:", a:"0", b:"1", c:"2", d:"-1", correct:"b"},
+  {question:"Probability range is:", a:"0 to 1", b:"1 to 10", c:"-1 to 1", d:"0 to 100", correct:"a"},
+  {question:"Mean of 2, 4, 6 is:", a:"3", b:"4", c:"5", d:"6", correct:"b"},
+  {question:"Median of 3, 5, 7 is:", a:"3", b:"5", c:"7", d:"6", correct:"b"},
+  {question:"Mode is:", a:"middle value", b:"most frequent", c:"average", d:"sum", correct:"b"},
+
+  {question:"Solve: x + 5 = 12", a:"5", b:"6", c:"7", d:"8", correct:"c"},
+  {question:"If x = 3, find x²:", a:"6", b:"9", c:"12", d:"15", correct:"b"},
+  {question:"Simplify: 2x + 3x", a:"5x", b:"6x", c:"x", d:"x²", correct:"a"},
+  {question:"Solve: 10 - 4 = ?", a:"4", b:"5", c:"6", d:"7", correct:"c"},
+  {question:"What is 8 × 7?", a:"54", b:"56", c:"58", d:"60", correct:"b"},
+
+  {question:"Fraction 1/2 in decimal:", a:"0.2", b:"0.4", c:"0.5", d:"0.6", correct:"c"},
+  {question:"0.75 as fraction:", a:"1/2", b:"3/4", c:"2/3", d:"1/4", correct:"b"},
+  {question:"Simplify: 6/12", a:"1/2", b:"2/3", c:"3/4", d:"1/3", correct:"a"},
+  {question:"If a triangle has 2 equal sides it is:", a:"Scalene", b:"Isosceles", c:"Equilateral", d:"Right angle", correct:"b"},
+  {question:"A circle has how many sides?", a:"0", b:"1", c:"2", d:"infinite", correct:"d"},
+
+  {question:"Diameter = ?", a:"2r", b:"r²", c:"r/2", d:"πr", correct:"a"},
+  {question:"Circumference of circle = ?", a:"2πr", b:"πr²", c:"πd²", d:"r²", correct:"a"},
+  {question:"Area of circle = ?", a:"πr²", b:"2πr", c:"πd", d:"r²/2", correct:"a"},
+  {question:"Simplify: 100 ÷ 25", a:"2", b:"3", c:"4", d:"5", correct:"c"},
+  {question:"Solve: 9 + 11", a:"18", b:"19", c:"20", d:"21", correct:"c"},
+
+  {question:"If 3x = 15, x = ?", a:"3", b:"4", c:"5", d:"6", correct:"c"},
+  {question:"Solve: 2x = 10", a:"3", b:"4", c:"5", d:"6", correct:"c"},
+  {question:"Algebra deals with:", a:"Numbers", b:"Letters and numbers", c:"Shapes", d:"Graphs only", correct:"b"},
+  {question:"A straight angle is:", a:"90°", b:"180°", c:"360°", d:"45°", correct:"b"},
+  {question:"An acute angle is:", a:"less than 90°", b:"90°", c:"more than 90°", d:"180°", correct:"a"},
+
+  {question:"Obtuse angle is:", a:"less than 90°", b:"90°", c:"more than 90°", d:"360°", correct:"c"},
+  {question:"Right angle is:", a:"45°", b:"90°", c:"180°", d:"360°", correct:"b"},
+  {question:"A quadrilateral has:", a:"3 sides", b:"4 sides", c:"5 sides", d:"6 sides", correct:"b"},
+  {question:"Sum of quadrilateral angles:", a:"180°", b:"270°", c:"360°", d:"90°", correct:"c"},
+  {question:"Cube has:", a:"4 faces", b:"6 faces", c:"8 faces", d:"10 faces", correct:"b"},
+
+  {question:"Volume of cube = ?", a:"l³", b:"l²", c:"2l", d:"l/3", correct:"a"},
+  {question:"Surface area of cube = ?", a:"6l²", b:"4l²", c:"2l²", d:"l³", correct:"a"},
+  {question:"Speed = ?", a:"distance × time", b:"distance / time", c:"time / distance", d:"mass / time", correct:"b"},
+  {question:"Distance = ?", a:"speed × time", b:"speed / time", c:"time / speed", d:"none", correct:"a"},
+  {question:"Time = ?", a:"distance × speed", b:"distance / speed", c:"speed / distance", d:"none", correct:"b"},
+
+  {question:"If 5 + x = 9, x = ?", a:"2", b:"3", c:"4", d:"5", correct:"c"},
+  {question:"Solve: 7 - 2 = ?", a:"3", b:"4", c:"5", d:"6", correct:"c"}
+        ],
         'English': [
   {question:"Choose the option nearest in meaning to the word in capital letters: He was very ANGRY.", a:"Happy", b:"Furious", c:"Calm", d:"Quiet", correct:"b"},
   {question:"Choose the option nearest in meaning: She is a BRILLIANT student.", a:"Dull", b:"Lazy", c:"Intelligent", d:"Slow", correct:"c"},
