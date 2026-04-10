@@ -1,100 +1,86 @@
 /* =======================================
-   ROOT VARIABLES (DESIGN SYSTEM)
-======================================= */
-
-:root{
-    --primary:#8b5e3c;
-    --primary-light:#a17250;
-    --accent:#d9c6b0;
-    --bg:#f5f1ee;
-    --card:#fff8f0;
-    --text:#4b2e2e;
-    --text-soft:#6a3f3f;
-    --border:#e2d6cc;
-
-    --radius:14px;
-    --shadow-soft:0 10px 30px rgba(0,0,0,0.08);
-    --shadow-hover:0 15px 40px rgba(0,0,0,0.15);
-
-    --transition: all 0.35s cubic-bezier(.4,0,.2,1);
-}
-
-
-/* =======================================
-   GLOBAL RESET
+   GLOBAL STYLES
 ======================================= */
 
 *{
     box-sizing:border-box;
     margin:0;
     padding:0;
+    font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 
 body{
-    font-family:'Segoe UI', system-ui, -apple-system, sans-serif;
-    background:linear-gradient(135deg,#f5f1ee,#efe6df);
-    color:var(--text);
+    background-color:#f5f1ee;
+    color:#4b2e2e;
     line-height:1.6;
+    position:relative;
     overflow-x:hidden;
 }
 
-
-/* =======================================
-   FLOATING BACKGROUND (ENHANCED)
-======================================= */
+/* Floating Background Shapes */
 
 body::before,
 body::after{
     content:"";
     position:fixed;
-    width:350px;
-    height:350px;
+    width:300px;
+    height:300px;
+    background:rgba(139,94,60,0.08);
     border-radius:50%;
-    background:radial-gradient(circle,var(--accent),transparent);
-    opacity:0.25;
     z-index:-1;
-    animation:float 18s infinite ease-in-out;
+    animation:floatMove 12s ease-in-out infinite;
 }
 
 body::before{
-    top:-100px;
-    left:-100px;
+    top:-80px;
+    left:-80px;
 }
 
 body::after{
-    bottom:-100px;
-    right:-100px;
-    animation-delay:8s;
+    bottom:-80px;
+    right:-80px;
+    animation-delay:6s;
 }
 
-@keyframes float{
-    0%,100%{transform:translateY(0);}
-    50%{transform:translateY(40px);}
+@keyframes floatMove{
+
+    0%{transform:translateY(0px);}
+    50%{transform:translateY(30px);}
+    100%{transform:translateY(0px);}
+
 }
 
 
 /* =======================================
-   CONTAINERS (GLASS STYLE)
+   MAIN CONTAINERS
 ======================================= */
 
 .container,
 .examContainer{
-    max-width:1050px;
-    margin:50px auto;
-    padding:30px;
 
-    background:rgba(255,248,240,0.75);
-    backdrop-filter:blur(12px);
+    max-width:1000px;
+    margin:40px auto;
+    padding:25px 30px;
+    background-color:#fff8f0;
+    border-radius:15px;
+    box-shadow:0 10px 25px rgba(0,0,0,0.12);
 
-    border-radius:var(--radius);
-    box-shadow:var(--shadow-soft);
+    animation:fadeIn 1s ease;
 
-    animation:fadeIn 0.8s ease;
 }
 
 @keyframes fadeIn{
-    from{opacity:0; transform:translateY(30px);}
-    to{opacity:1; transform:translateY(0);}
+
+    from{
+        opacity:0;
+        transform:translateY(20px);
+    }
+
+    to{
+        opacity:1;
+        transform:translateY(0);
+    }
+
 }
 
 
@@ -103,261 +89,391 @@ body::after{
 ======================================= */
 
 h1{
+    color:#4b2e2e;
+    font-size:2.3em;
+    margin-bottom:10px;
     text-align:center;
-    font-size:2.6rem;
-    margin-bottom:15px;
-    background:linear-gradient(90deg,var(--primary),#c49a7c);
-    -webkit-background-clip:text;
-    -webkit-text-fill-color:transparent;
 }
 
 h2,h3{
-    color:var(--text-soft);
+    color:#6a3f3f;
     margin-bottom:15px;
 }
 
 
 /* =======================================
-   INPUTS (MODERN)
+   INPUTS / SELECTS
 ======================================= */
 
-input, select{
-    width:100%;
-    padding:14px;
-    border-radius:10px;
-    border:1px solid var(--border);
-    background:white;
-    font-size:1rem;
+input,
+select{
 
-    transition:var(--transition);
+    width:100%;
+    padding:12px 15px;
+    margin:10px 0 20px 0;
+
+    border:2px solid #d9c6b0;
+    border-radius:8px;
+
+    font-size:1em;
+
+    transition:all 0.3s ease;
+
 }
 
-input:focus, select:focus{
-    border-color:var(--primary);
-    box-shadow:0 0 0 3px rgba(139,94,60,0.15);
+input:focus,
+select:focus{
+
+    border-color:#8b5e3c;
     outline:none;
+
 }
 
 
 /* =======================================
-   BUTTONS (PREMIUM INTERACTION)
+   BUTTONS
 ======================================= */
 
 button{
-    background:linear-gradient(135deg,var(--primary),var(--primary-light));
-    color:white;
-    border:none;
-    padding:13px 26px;
-    border-radius:10px;
-    cursor:pointer;
-    font-weight:600;
-    letter-spacing:0.5px;
 
-    transition:var(--transition);
+    background-color:#8b5e3c;
+    color:white;
+
+    border:none;
+    padding:12px 25px;
+
+    font-size:1em;
+
+    border-radius:8px;
+    cursor:pointer;
+
+    transition:all 0.3s ease;
+
+    margin-top:10px;
+
 }
 
 button:hover{
-    transform:translateY(-4px) scale(1.02);
-    box-shadow:var(--shadow-hover);
-}
 
-button:active{
-    transform:scale(0.98);
+    background-color:#a17250;
+
+    transform:translateY(-3px);
+
+    box-shadow:0 6px 12px rgba(0,0,0,0.18);
+
 }
 
 
 /* =======================================
-   EXAM LAYOUT
+   EXAM PAGE LAYOUT
 ======================================= */
 
 .examContainer{
+
     display:flex;
-    gap:25px;
+    gap:30px;
+
 }
 
-.leftPanel{flex:3;}
+.leftPanel{
+
+    flex:3;
+
+}
 
 .rightPanel{
+
     flex:1;
+
+    background-color:#fdf5f0;
+
     padding:20px;
-    border-radius:var(--radius);
-    background:rgba(255,255,255,0.6);
-    border:1px solid var(--border);
-    backdrop-filter:blur(10px);
+
+    border-radius:12px;
+
+    border:1px solid #e2d6cc;
+
+    height:fit-content;
+
 }
 
 
 /* =======================================
-   QUESTION CARD
+   QUESTION BOX
 ======================================= */
 
 #question{
-    padding:22px;
-    background:white;
-    border-radius:var(--radius);
-    box-shadow:var(--shadow-soft);
 
-    font-size:1.2rem;
     margin-bottom:20px;
 
-    transition:var(--transition);
-}
+    font-size:1.2em;
 
-#question:hover{
-    transform:translateY(-5px);
-}
+    background:white;
 
-
-/* =======================================
-   OPTIONS (INTERACTIVE)
-======================================= */
-
-#options button{
-    width:100%;
-    margin-bottom:12px;
-    padding:14px;
-
-    background:linear-gradient(135deg,#f1e3d8,#e6d3c4);
-    color:var(--text);
+    padding:20px;
 
     border-radius:10px;
 
-    transition:var(--transition);
+    box-shadow:0 6px 15px rgba(0,0,0,0.08);
+
+    animation:floatCard 4s ease-in-out infinite;
+
+}
+
+@keyframes floatCard{
+
+    0%{transform:translateY(0px);}
+    50%{transform:translateY(-5px);}
+    100%{transform:translateY(0px);}
+
+}
+
+
+/* =======================================
+   ANSWER OPTIONS
+======================================= */
+
+#options button{
+
+    display:block;
+
+    width:100%;
+
+    margin-bottom:12px;
+
+    background-color:#d9c6b0;
+
+    color:#4b2e2e;
+
+    border-radius:8px;
+
+    border:none;
+
+    padding:12px;
+
+    font-size:1em;
+
+    cursor:pointer;
+
+    transition:all 0.3s ease;
+
 }
 
 #options button:hover{
-    background:linear-gradient(135deg,var(--primary),var(--primary-light));
+
+    background-color:#bfa185;
+
     color:white;
-    transform:translateX(5px);
+
 }
 
 
 /* =======================================
-   NAVIGATOR
+   QUESTION NAVIGATOR
 ======================================= */
 
 #navigator{
+
     display:flex;
+
     flex-wrap:wrap;
-    gap:10px;
+
+    gap:8px;
+
     margin-top:15px;
+
 }
 
 .navBtn{
-    width:38px;
-    height:38px;
-    border-radius:50%;
-    border:none;
 
-    background:linear-gradient(135deg,#fff,#f1e3d8);
+    width:35px;
+
+    height:35px;
+
+    border-radius:50%;
+
+    border:1px solid #8b5e3c;
+
+    background-color:#fff3eb;
+
     cursor:pointer;
 
-    transition:var(--transition);
+    transition:all 0.3s ease;
+
 }
 
 .navBtn:hover{
-    background:var(--primary);
+
+    background-color:#8b5e3c;
+
     color:white;
-    transform:scale(1.15);
+
+    transform:scale(1.1);
+
 }
 
 
 /* =======================================
-   TIMER (GLOW EFFECT)
+   TIMER
 ======================================= */
 
 #timer{
-    font-size:1.7rem;
-    font-weight:bold;
-    color:var(--primary);
 
-    text-shadow:0 0 10px rgba(139,94,60,0.3);
+    font-size:1.6em;
+
+    margin-bottom:20px;
+
+    color:#8b5e3c;
+
+    font-weight:bold;
+
 }
 
 
 /* =======================================
-   TABLE (MODERN DASHBOARD)
+   ADMIN DASHBOARD TABLE
 ======================================= */
 
 table{
+
     width:100%;
+
     border-collapse:collapse;
+
     margin-top:20px;
-    border-radius:var(--radius);
+
+    background-color:#fff8f0;
+
+    border-radius:10px;
+
     overflow:hidden;
-    box-shadow:var(--shadow-soft);
+
 }
 
-th, td{
-    padding:14px;
+table th,
+table td{
+
+    padding:12px 15px;
+
+    border-bottom:1px solid #e2d6cc;
+
+    text-align:left;
+
 }
 
-th{
-    background:linear-gradient(135deg,var(--primary),var(--primary-light));
+table th{
+
+    background-color:#8b5e3c;
+
     color:white;
+
 }
 
-tr:nth-child(even){
-    background:#fdf5f0;
+table tr:nth-child(even){
+
+    background-color:#fdf5f0;
+
 }
 
-tr:hover{
-    background:#ead7cc;
-    transition:var(--transition);
+table tr:hover{
+
+    background-color:#e8d6cd;
+
 }
 
 
 /* =======================================
-   FILTERS
+   ADMIN FILTERS
 ======================================= */
 
 .filters{
+
     display:flex;
-    gap:12px;
+
     flex-wrap:wrap;
+
+    gap:15px;
+
+    margin-bottom:15px;
+
 }
 
-.filters input,
-.filters select{
+.filters select,
+.filters input{
+
     flex:1;
+
+    padding:10px;
+
+    border-radius:8px;
+
+    border:1px solid #d9c6b0;
+
 }
 
 .filters button{
-    flex-shrink:0;
+
+    padding:10px 15px;
+
+    border-radius:8px;
+
 }
 
 
 /* =======================================
-   PROGRESS BAR (ANIMATED)
-======================================= */
-
-.progressContainer{
-    width:100%;
-    height:14px;
-    background:#e6d6c8;
-    border-radius:20px;
-    overflow:hidden;
-    margin-bottom:20px;
-}
-
-.progressBar{
-    height:100%;
-    width:0%;
-    background:linear-gradient(90deg,var(--primary),#c49a7c);
-    transition:width 0.6s ease;
-}
-
-
-/* =======================================
-   RESPONSIVE
+   RESPONSIVE DESIGN
 ======================================= */
 
 @media(max-width:900px){
+
     .examContainer{
+
         flex-direction:column;
+
     }
 
-    h1{
-        font-size:2rem;
+    .leftPanel,
+    .rightPanel{
+
+        width:100%;
+
     }
+
+    .filters{
+
+        flex-direction:column;
+
+    }
+
+}
+
+/* =======================================
+   PROGRESS BAR
+======================================= */
+
+.progressContainer{
+
+    width:100%;
+    height:12px;
+
+    background:#e6d6c8;
+
+    border-radius:10px;
+
+    margin-bottom:20px;
+
+    overflow:hidden;
+
+}
+
+.progressBar{
+
+    height:100%;
+
+    width:0%;
+
+    background:#8b5e3c;
+
+    transition:width 0.4s ease;
+
 }
