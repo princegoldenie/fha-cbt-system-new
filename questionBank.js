@@ -7019,7 +7019,7 @@ const questionBank = {
   {question:"A sentence that asks a question is:", a:"Declarative", b:"Interrogative", c:"Imperative", d:"Exclamatory", correct:"b"},
   {question:"Choose correct punctuation: What is your name___", a:".", b:"!", c:"?", d:",", correct:"c"},
   {question:"Choose correct punctuation: Wow___ that is amazing!", a:".", b:"!", c:"?", d:",", correct:"b"},
-  {question:"Choose correct punctuation: I bought apples___ oranges and bananas.", a:",", b:".", c:"?", d":"!", correct:"a"},
+  {question:"Choose correct punctuation: I bought apples___ oranges and bananas.", a:",", b:".", c:"?", d:"!", correct:"a"},
 
   {question:"Choose the correct article: ___ apple a day keeps the doctor away.", a:"A", b:"An", c:"The", d:"No article", correct:"b"},
   {question:"Choose the correct article: ___ sun rises in the east.", a:"A", b:"An", c:"The", d:"No article", correct:"c"},
