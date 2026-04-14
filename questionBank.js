@@ -5392,7 +5392,79 @@ const questionBank = {
 
     // SENIOR SECONDARY
     'SS1': {
-        'Mathematics': [],
+        'Mathematics': [
+  {question:"Find the 5th term of an arithmetic progression whose first term is 2 and common difference is 3.", a:"11", b:"12", c:"13", d:"14", correct:"d"},
+  {question:"Simplify: 1/2 + 1/4", a:"1/2", b:"3/4", c:"2/3", d:"1", correct:"b"},
+  {question:"Solve: x² − 5x + 6 = 0", a:"2, 3", b:"-2, -3", c:"1, 6", d:"3, 4", correct:"a"},
+  {question:"Write the first four terms of a sequence with first term 3 and common difference 2.", a:"3, 5, 7, 9", b:"3, 6, 9, 12", c:"2, 4, 6, 8", d:"5, 7, 9, 11", correct:"a"},
+  {question:"Evaluate: 3/5 × 5/6", a:"1/2", b:"3/6", c:"15/30", d:"1", correct:"a"},
+
+  {question:"Find the next term: 6, 9, 12, 15, ___", a:"16", b:"17", c:"18", d:"19", correct:"c"},
+  {question:"Solve: x² − 9 = 0", a:"3", b:"-3", c:"±3", d:"±9", correct:"c"},
+  {question:"Simplify: 3/4 − 1/4", a:"1/4", b:"1/2", c:"3/4", d:"2/4", correct:"b"},
+  {question:"Find the common difference of: 4, 7, 10, 13", a:"2", b:"3", c:"4", d:"5", correct:"b"},
+  {question:"Solve: x² + 5x + 6 = 0", a:"2, 3", b:"-2, -3", c:"1, 6", d:"-1, -6", correct:"b"},
+
+  {question:"Evaluate: 2/3 + 1/3", a:"1", b:"2/3", c:"3/6", d:"4/3", correct:"a"},
+  {question:"Find the 6th term of: 2, 4, 6, 8, …", a:"10", b:"12", c:"14", d:"16", correct:"b"},
+  {question:"Solve: x² − 4x + 4 = 0", a:"2", b:"-2", c:"4", d:"-4", correct:"a"},
+  {question:"Find the first term if the second term is 7 and common difference is 3.", a:"2", b:"3", c:"4", d:"5", correct:"c"},
+  {question:"Simplify: 5/6 − 1/3", a:"1/2", b:"2/3", c:"1/3", d:"4/6", correct:"a"},
+
+  {question:"Solve: x² − x − 6 = 0", a:"3, -2", b:"-3, 2", c:"6, -1", d:"-6, 1", correct:"a"},
+  {question:"Find the 4th term of: 5, 10, 15, …", a:"18", b:"20", c:"25", d:"30", correct:"b"},
+  {question:"Evaluate: 4/5 × 5/4", a:"1", b:"20/20", c:"2", d:"4", correct:"a"},
+  {question:"Solve: x² + 4x + 3 = 0", a:"-1, -3", b:"1, 3", c:"-2, -2", d:"2, 2", correct:"a"},
+  {question:"Find the next term: 1, 3, 5, 7, ___", a:"8", b:"9", c:"10", d:"11", correct:"b"},
+
+  {question:"Simplify: 7/8 + 1/8", a:"1", b:"7/8", c:"8/16", d:"1/8", correct:"a"},
+  {question:"Solve: x² − 3x − 4 = 0", a:"4, -1", b:"-4, 1", c:"2, -2", d:"3, -3", correct:"a"},
+  {question:"Find the common difference if first term is 5 and second term is 9.", a:"2", b:"3", c:"4", d:"5", correct:"c"},
+  {question:"Evaluate: (1/2 + 1/2) × 2", a:"1", b:"2", c:"3", d:"4", correct:"b"},
+  {question:"Solve: x² − 6x + 9 = 0", a:"3", b:"-3", c:"9", d:"-9", correct:"a"},
+
+  {question:"Find the 3rd term of: 2, 6, 10, …", a:"8", b:"10", c:"12", d:"14", correct:"b"},
+  {question:"Simplify: 9/10 − 1/2", a:"2/5", b:"1/5", c:"3/5", d:"4/5", correct:"a"},
+  {question:"Solve: x² + x − 6 = 0", a:"2, -3", b:"-2, 3", c:"1, -6", d:"-1, 6", correct:"a"},
+  {question:"Find the next term: 3, 6, 9, 12, ___", a:"13", b:"14", c:"15", d:"16", correct:"c"},
+  {question:"Simplify: 2/5 + 3/5", a:"1", b:"5/10", c:"2/5", d:"3/5", correct:"a"},
+
+  {question:"Find the 7th term of: 1, 3, 5, …", a:"11", b:"12", c:"13", d:"14", correct:"c"},
+  {question:"Solve: x² − 2x − 8 = 0", a:"4, -2", b:"-4, 2", c:"2, -8", d:"-2, 8", correct:"a"},
+  {question:"Simplify: 6/7 − 2/7", a:"4/7", b:"2/7", c:"3/7", d:"1/7", correct:"a"},
+  {question:"Find the next term: 10, 15, 20, ___", a:"22", b:"23", c:"25", d:"30", correct:"c"},
+  {question:"Solve: x² + 6x + 5 = 0", a:"-1, -5", b:"1, 5", c:"-2, -3", d:"2, 3", correct:"a"},
+
+  {question:"Evaluate: (2/3) × (3/2)", a:"1", b:"2", c:"3", d:"1/2", correct:"a"},
+  {question:"Find the 8th term of: 2, 5, 8, …", a:"23", b:"24", c:"25", d:"26", correct:"a"},
+  {question:"Simplify: 8/9 + 1/9", a:"1", b:"9/18", c:"8/9", d:"1/9", correct:"a"},
+  {question:"Solve: x² − 7x + 10 = 0", a:"5, 2", b:"-5, -2", c:"10, -1", d:"-10, 1", correct:"a"},
+  {question:"Find the next term: 4, 8, 12, ___", a:"14", b:"15", c:"16", d:"18", correct:"c"},
+
+  {question:"Simplify: 3/10 + 2/10", a:"1/2", b:"5/10", c:"1", d:"3/10", correct:"b"},
+  {question:"Solve: x² − x − 2 = 0", a:"2, -1", b:"-2, 1", c:"1, -2", d:"-1, 2", correct:"a"},
+  {question:"Find the 5th term of: 3, 6, 9, …", a:"12", b:"15", c:"18", d:"21", correct:"b"},
+  {question:"Simplify: 1/3 + 2/3", a:"1", b:"2/3", c:"3/6", d:"4/3", correct:"a"},
+  {question:"Solve: x² − 8x + 16 = 0", a:"4", b:"-4", c:"8", d:"-8", correct:"a"},
+
+  {question:"Find the next term: 7, 10, 13, ___", a:"15", b:"16", c:"17", d:"18", correct:"b"},
+  {question:"Evaluate: 5/6 × 6/5", a:"1", b:"5", c:"6", d:"11", correct:"a"},
+  {question:"Solve: x² + 2x − 3 = 0", a:"1, -3", b:"-1, 3", c:"2, -2", d:"-2, 2", correct:"a"},
+  {question:"Find the 6th term of: 4, 6, 8, …", a:"12", b:"14", c:"16", d:"18", correct:"b"},
+  {question:"Simplify: 5/8 + 3/8", a:"1", b:"8/16", c:"5/8", d:"3/8", correct:"a"},
+
+  {question:"Solve: x² − 4x − 5 = 0", a:"5, -1", b:"-5, 1", c:"4, -5", d:"-4, 5", correct:"a"},
+  {question:"Find the next term: 2, 5, 8, 11, ___", a:"12", b:"13", c:"14", d:"15", correct:"c"},
+  {question:"Simplify: 6/10 − 1/10", a:"1/2", b:"5/10", c:"6/10", d:"1/10", correct:"b"},
+  {question:"Solve: x² + 3x + 2 = 0", a:"-1, -2", b:"1, 2", c:"-1, 2", d:"1, -2", correct:"a"},
+  {question:"Find the 4th term of: 2, 7, 12, …", a:"15", b:"16", c:"17", d:"18", correct:"c"},
+
+  {question:"Evaluate: 2/4 + 1/4", a:"1/2", b:"3/4", c:"1", d:"2/4", correct:"b"},
+  {question:"Solve: x² − 10x + 25 = 0", a:"5", b:"-5", c:"10", d:"-10", correct:"a"},
+  {question:"Find the next term: 5, 9, 13, ___", a:"16", b:"17", c:"18", d:"19", correct:"b"},
+  {question:"Simplify: 4/6 + 2/6", a:"1", b:"6/12", c:"4/6", d:"2/6", correct:"a"},
+  {question:"Solve: x² − 2x − 3 = 0", a:"3, -1", b:"-3, 1", c:"2, -3", d:"-2, 3", correct:"a"}
+        ],
         'English': [
   {question:"A phrase is a group of words that _.", a:"Has a subject and a verb and makes complete sense", b:"Does not have a subject or a verb and does not make complete sense", c:"Always ends with a full stop", d:"Contains only nouns", correct:"b"},
   {question:"Which of these is a noun phrase?", a:"Ran quickly", b:"The beautiful girl", c:"Under the table", d:"Singing loudly", correct:"b"},
