@@ -6388,7 +6388,79 @@ const questionBank = {
         ]
     },
     'SS2': {
-        'Mathematics': [],
+        'Mathematics': [
+  {question:"Differentiate: y = x²", a:"2x", b:"x", c:"x²", d:"1", correct:"a"},
+  {question:"Find the derivative of y = 3x³", a:"9x²", b:"3x²", c:"x³", d:"6x", correct:"a"},
+  {question:"Find the 6th term of an AP: 2, 5, 8, …", a:"15", b:"16", c:"17", d:"18", correct:"c"},
+  {question:"Simplify: 3/4 + 1/2", a:"1", b:"5/4", c:"3/2", d:"7/4", correct:"b"},
+  {question:"Differentiate: y = (x² + 1)³", a:"3(x² + 1)²", b:"6x(x² + 1)²", c:"(x² + 1)³", d:"2x(x² + 1)", correct:"b"},
+
+  {question:"Solve: x² − 4x + 3 = 0", a:"1, 3", b:"-1, -3", c:"2, 2", d:"-2, -2", correct:"a"},
+  {question:"Differentiate: y = x³ + 2x", a:"3x² + 2", b:"3x²", c:"x² + 2", d:"2x", correct:"a"},
+  {question:"Find the common difference of: 5, 9, 13, …", a:"3", b:"4", c:"5", d:"6", correct:"b"},
+  {question:"Differentiate: y = x(x² + 1)", a:"x² + 1", b:"3x² + 1", c:"3x²", d:"x²", correct:"b"},
+  {question:"Evaluate: 5/6 − 1/3", a:"1/2", b:"2/3", c:"1/3", d:"4/6", correct:"a"},
+
+  {question:"Differentiate: y = (2x + 1)²", a:"2(2x + 1)", b:"4(2x + 1)", c:"4x + 2", d:"2x + 1", correct:"c"},
+  {question:"Find the next term: 3, 7, 11, …", a:"13", b:"14", c:"15", d:"16", correct:"c"},
+  {question:"Differentiate: y = x² sin x", a:"2x sin x", b:"x² cos x", c:"2x sin x + x² cos x", d:"x² sin x", correct:"c"},
+  {question:"Solve: x² − x − 6 = 0", a:"3, -2", b:"-3, 2", c:"6, -1", d:"-6, 1", correct:"a"},
+  {question:"Differentiate: y = (x² + 1)/x", a:"(x² − 1)/x²", b:"(2x)/x", c:"x²/x²", d:"1/x", correct:"a"},
+
+  {question:"Simplify: 7/8 + 1/8", a:"1", b:"7/8", c:"8/16", d:"1/8", correct:"a"},
+  {question:"Differentiate: y = (x + 1)(x − 1)", a:"2x", b:"x² − 1", c:"1", d:"2", correct:"a"},
+  {question:"Find the 4th term of: 4, 8, 12, …", a:"14", b:"15", c:"16", d:"18", correct:"c"},
+  {question:"Differentiate: y = √x", a:"1/2√x", b:"√x", c:"x", d:"1/x", correct:"a"},
+  {question:"Solve: x² + 5x + 6 = 0", a:"-2, -3", b:"2, 3", c:"-1, -6", d:"1, 6", correct:"a"},
+
+  {question:"Differentiate: y = (x³ + 1)²", a:"2(x³ + 1)", b:"6x²(x³ + 1)", c:"3x²", d:"x³", correct:"b"},
+  {question:"Find the next term: 2, 6, 10, …", a:"12", b:"13", c:"14", d:"15", correct:"c"},
+  {question:"Differentiate: y = x² cos x", a:"2x cos x", b:"-x² sin x", c:"2x cos x − x² sin x", d:"x² cos x", correct:"c"},
+  {question:"Simplify: 3/5 × 5/3", a:"1", b:"3", c:"5", d:"15", correct:"a"},
+  {question:"Differentiate: y = (2x + 3)/x", a:"-3/x²", b:"2/x", c:"1/x", d:"2x/x²", correct:"a"},
+
+  {question:"Solve: x² − 6x + 9 = 0", a:"3", b:"-3", c:"9", d:"-9", correct:"a"},
+  {question:"Differentiate: y = x⁴", a:"4x³", b:"x³", c:"4x", d:"x⁴", correct:"a"},
+  {question:"Find the 7th term of: 1, 4, 7, …", a:"19", b:"20", c:"21", d:"22", correct:"a"},
+  {question:"Differentiate: y = (x² + 2x)³", a:"3(x² + 2x)²", b:"(2x + 2)", c:"3(x² + 2x)²(2x + 2)", d:"x²", correct:"c"},
+  {question:"Simplify: 4/6 + 2/6", a:"1", b:"6/12", c:"4/6", d:"2/6", correct:"a"},
+
+  {question:"Differentiate: y = 5x²", a:"10x", b:"5x", c:"x²", d:"2x", correct:"a"},
+  {question:"Find the next term: 7, 11, 15, ___", a:"17", b:"18", c:"19", d:"20", correct:"c"},
+  {question:"Simplify: 2/3 + 1/6", a:"1/2", b:"2/3", c:"5/6", d:"3/6", correct:"c"},
+  {question:"Solve: x² − 2x − 8 = 0", a:"4, -2", b:"-4, 2", c:"2, -8", d:"-2, 8", correct:"a"},
+  {question:"Differentiate: y = (x + 2)²", a:"2(x + 2)", b:"x + 2", c:"2x + 2", d:"x²", correct:"a"},
+
+  {question:"Find the 5th term of: 3, 7, 11, …", a:"15", b:"17", c:"19", d:"21", correct:"c"},
+  {question:"Differentiate: y = x³ + x²", a:"3x² + 2x", b:"x² + x", c:"3x²", d:"2x", correct:"a"},
+  {question:"Simplify: 5/8 + 3/8", a:"1", b:"8/16", c:"5/8", d:"3/8", correct:"a"},
+  {question:"Solve: x² + 2x − 3 = 0", a:"1, -3", b:"-1, 3", c:"2, -2", d:"-2, 2", correct:"a"},
+  {question:"Differentiate: y = (3x + 1)²", a:"6(3x + 1)", b:"6x + 2", c:"3x + 1", d:"2(3x + 1)", correct:"a"},
+
+  {question:"Find the next term: 2, 5, 8, 11, ___", a:"12", b:"13", c:"14", d:"15", correct:"c"},
+  {question:"Differentiate: y = x² + 4x + 1", a:"2x + 4", b:"x + 4", c:"2x + 1", d:"x²", correct:"a"},
+  {question:"Simplify: 6/10 − 1/10", a:"1/2", b:"5/10", c:"6/10", d:"1/10", correct:"b"},
+  {question:"Solve: x² − 7x + 12 = 0", a:"3, 4", b:"-3, -4", c:"2, 6", d:"-2, -6", correct:"a"},
+  {question:"Differentiate: y = (x² + 1)x", a:"x² + 1", b:"3x² + 1", c:"2x", d:"x³", correct:"b"},
+
+  {question:"Find the 6th term of: 1, 4, 7, …", a:"15", b:"16", c:"17", d:"18", correct:"b"},
+  {question:"Differentiate: y = (x + 1)/x", a:"-1/x²", b:"1/x", c:"x", d:"2/x", correct:"a"},
+  {question:"Simplify: 4/9 + 5/9", a:"1", b:"9/18", c:"4/9", d:"5/9", correct:"a"},
+  {question:"Solve: x² − 4x − 5 = 0", a:"5, -1", b:"-5, 1", c:"4, -5", d:"-4, 5", correct:"a"},
+  {question:"Differentiate: y = x(x + 3)", a:"2x + 3", b:"x + 3", c:"2x", d:"x²", correct:"a"},
+
+  {question:"Find the next term: 4, 9, 14, ___", a:"18", b:"19", c:"20", d:"21", correct:"b"},
+  {question:"Differentiate: y = (x² + x)²", a:"2(x² + x)", b:"2(x² + x)(2x + 1)", c:"x² + x", d:"2x + 1", correct:"b"},
+  {question:"Simplify: 3/10 + 2/10", a:"1/2", b:"5/10", c:"1", d:"3/10", correct:"b"},
+  {question:"Solve: x² + 3x + 2 = 0", a:"-1, -2", b:"1, 2", c:"-1, 2", d:"1, -2", correct:"a"},
+  {question:"Differentiate: y = (2x² + 1)³", a:"3(2x² + 1)²", b:"12x(2x² + 1)²", c:"6x", d:"2x²", correct:"b"},
+
+  {question:"Find the 4th term of: 6, 11, 16, …", a:"20", b:"21", c:"22", d:"23", correct:"b"},
+  {question:"Differentiate: y = x²/x", a:"1", b:"x", c:"2x", d:"1/x", correct:"a"},
+  {question:"Simplify: 5/12 + 1/12", a:"1/2", b:"6/12", c:"5/12", d:"1/12", correct:"b"},
+  {question:"Solve: x² − 2x − 3 = 0", a:"3, -1", b:"-3, 1", c:"2, -3", d:"-2, 3", correct:"a"},
+  {question:"Differentiate: y = (x + 4)(x)", a:"2x + 4", b:"x + 4", c:"2x", d:"x²", correct:"a"}
+        ],
         'English': [
   {question:"A phrase is a group of words that _.", a:"Has a subject and a verb and makes complete sense", b:"Does not have a subject or a verb and does not make complete sense", c:"Always ends with a full stop", d:"Contains only nouns", correct:"b"},
   {question:"Which of these is a noun phrase?", a:"Ran quickly", b:"The beautiful girl", c:"Under the table", d:"Singing loudly", correct:"b"},
